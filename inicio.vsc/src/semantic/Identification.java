@@ -11,6 +11,7 @@ import java.util.Map;
 import ast.AST;
 import ast.DefFuncion;
 import ast.DefStruct;
+import ast.DefVariable;
 import ast.Definicion;
 import ast.ExpresionLlamada;
 import ast.FuncionLlamada;
@@ -73,13 +74,28 @@ public class Identification extends DefaultVisitor {
 	}
 
 	public Object visit(VariableStruct node, Object param) {
-		variablesStruct.remove(node.getNombre());
-		VariableStruct definicion = variablesStruct.get(node.getNombre());
-		predicado(definicion == null, "Campo repetido: " + node.getNombre(), node);
+		variablesStruct.remove(node.getNombre(), node);
+		predicado(variablesStruct.get(node.getNombre()) == null, "Campo repetido: " + node.getNombre(), node);
 
 		if (node.getTipo() != null)
 			node.getTipo().accept(this, param);
+		return null;
+	}
 
+	public Object visit(StructTipo node, Object param) {
+		predicado(estructuras.getFromAny(node.getNombre()) != null, "Estructura no definida: " + node.getNombre(), node);
+		node.setDefinicion(estructuras.getFromAny(node.getNombre()));
+		return null;
+	}
+
+	// VARIABLES
+	public Object visit(DefVariable node, Object param) {
+		DefVariable definicion = variables.getFromAny(node.getNombre());
+		predicado(definicion == null, "Variable ya definida: " + node.getNombre(), node);
+		variables.put(node.getNombre(), node);
+
+		if (node.getTipo() != null)
+			node.getTipo().accept(this, param);
 		return null;
 	}
 
@@ -99,4 +115,5 @@ public class Identification extends DefaultVisitor {
 	private Map<String, DefFuncion> funciones = new HashMap<String, DefFuncion>();
 	private Map<String, VariableStruct> variablesStruct = new HashMap<>();
 	private ContextMap<String, DefStruct> estructuras = new ContextMap<>();
+	private ContextMap<String, DefVariable> variables = new ContextMap<>();
 }
