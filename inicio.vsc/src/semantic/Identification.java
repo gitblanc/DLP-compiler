@@ -15,6 +15,8 @@ import ast.DefVariable;
 import ast.Definicion;
 import ast.ExpresionLlamada;
 import ast.FuncionLlamada;
+import ast.Ident;
+import ast.Parametros;
 import ast.Position;
 import ast.Program;
 import ast.StructTipo;
@@ -32,6 +34,8 @@ public class Identification extends DefaultVisitor {
 	// defFuncion:definicion -> nombre:String parametros:parametros* tipo:tipo
 	// defvariable:defVariable* sentencia:sentencia*
 	public Object visit(DefFuncion node, Object param) {
+		variables.set();
+
 		if (node.getTipo() != null)// cuando de un nullPointer es pq desde el grammar.g4 le paso un null
 			node.getTipo().accept(this, param); // No es necesario realmente
 
@@ -39,8 +43,15 @@ public class Identification extends DefaultVisitor {
 		predicado(definicion == null, "Función ya definida: " + node.getNombre(), node);
 		funciones.put(node.getNombre(), node);
 
+		visitChildren(node.getParametros(), param);
+
+		if (node.getTipo() != null)
+			node.getTipo().accept(this, param);
+
 		visitChildren(node.getDefvariable(), param);
 		visitChildren(node.getSentencia(), param);
+
+		variables.reset();
 		return null;
 	}
 
@@ -83,7 +94,8 @@ public class Identification extends DefaultVisitor {
 	}
 
 	public Object visit(StructTipo node, Object param) {
-		predicado(estructuras.getFromAny(node.getNombre()) != null, "Estructura no definida: " + node.getNombre(), node);
+		predicado(estructuras.getFromAny(node.getNombre()) != null, "Estructura no definida: " + node.getNombre(),
+				node);
 		node.setDefinicion(estructuras.getFromAny(node.getNombre()));
 		return null;
 	}
@@ -96,6 +108,24 @@ public class Identification extends DefaultVisitor {
 
 		if (node.getTipo() != null)
 			node.getTipo().accept(this, param);
+		return null;
+	}
+
+	public Object visit(Parametros node, Object param) {
+		DefVariable definicion = new DefVariable(node.getTipo(), node.getNombre());
+		definicion.setPositions(node);
+		predicado(variables.getFromTop(node.getNombre()) == null, "Parámetro repetido: " + node.getNombre(), node);
+
+		variables.put(node.getNombre(), definicion);
+
+		if (node.getTipo() != null)
+			node.getTipo().accept(this, param);
+		return null;
+	}
+	
+	public Object visit(Ident node, Object param) {
+		predicado(variables.getFromAny(node.getValor()) != null, "Variable no definida: " + node.getValor(), node);
+		node.setDefinicion((DefVariable) variables.getFromAny(node.getValor()));
 		return null;
 	}
 
