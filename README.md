@@ -5,4 +5,4 @@
 
 My work for the subject DLP
 
-![image](https://user-images.githubusercontent.com/87705461/226328127-19141220-11ad-4c74-9e05-735f0e1099f8.png)
+![image](https://user-images.githubusercontent.com/87705461/226328518-a6d5fabc-1f26-4580-aaf5-b9fddb010596.png)
