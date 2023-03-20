@@ -16,23 +16,24 @@ public class Print extends AbstractSentencia {
 		this.print = print;
 		this.printTipo = printTipo;
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(print);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(print);
 	}
 
 	public Print(Object print, Object printTipo) {
 		this.print = (Expresion) getAST(print);
-		this.printTipo = (printTipo instanceof Token) ? ((Token)printTipo).getText() : (String) printTipo;
+		this.printTipo = (printTipo instanceof Token) ? ((Token) printTipo).getText() : (String) printTipo;
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(print, printTipo);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(print, printTipo);
 	}
 
 	public Expresion getPrint() {
 		return print;
 	}
+
 	public void setPrint(Expresion print) {
 		this.print = print;
 	}
@@ -40,12 +41,13 @@ public class Print extends AbstractSentencia {
 	public String getPrintTipo() {
 		return printTipo;
 	}
+
 	public void setPrintTipo(String printTipo) {
 		this.printTipo = printTipo;
 	}
 
 	@Override
-	public Object accept(Visitor v, Object param) { 
+	public Object accept(Visitor v, Object param) {
 		return v.visit(this, param);
 	}
 
@@ -53,6 +55,20 @@ public class Print extends AbstractSentencia {
 	private String printTipo;
 
 	public String toString() {
-       return "{print:" + getPrint() + ", printTipo:" + getPrintTipo() + "}";
-   }
+		return "{print:" + getPrint() + ", printTipo:" + getPrintTipo() + "}";
+	}
+
+	private DefFuncion defFunction;
+
+	@Override
+	public void setFuncion(DefFuncion function) {
+		this.defFunction = function;
+
+	}
+
+	@Override
+	public DefFuncion getFunction() {
+
+		return defFunction;
+	}
 }

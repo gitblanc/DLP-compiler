@@ -35,6 +35,7 @@ import ast.AST;
 import parser.GrammarLexer;
 import parser.GrammarParser;
 import recorreArbol.MyVisitorImplementation;
+import semantic.SemanticAnalisys;
 import visitor.ASTPrinter;
 
 /**
@@ -47,7 +48,7 @@ import visitor.ASTPrinter;
  * Generación de Código: 'MemoryAllocation.java' y 'CodeSelection.java'.
  */
 public class Main {
-	public static final String INPUT_FILE = "ejemplo.txt"; // Fichero de prueba durante el desarrollo
+	public static final String INPUT_FILE = "tests-semantic/1. Funciones.txt"; // Fichero de prueba durante el desarrollo
 	public static final String OUTPUT_FILE = "output.txt";
 
 	public static void main(String[] args) throws Exception {
@@ -86,10 +87,10 @@ public class Main {
 		}
 
 //        // 2. Fase de Análisis Semántico
-//        SemanticAnalisys analyzer = new SemanticAnalisys(errorManager);
-//        analyzer.analize(ast);
-//        if (errorManager.errorsCount() > 0)
-//            return ast;
+        SemanticAnalisys analyzer = new SemanticAnalisys(errorManager);
+        analyzer.analize(ast);
+        if (errorManager.errorsCount() > 0)
+            return ast;
 //
 //        // 3. Fase de Generación de Código
 //        File sourceFile = new File(sourceName);

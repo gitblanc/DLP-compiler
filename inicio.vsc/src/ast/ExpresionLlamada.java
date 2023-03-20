@@ -17,23 +17,24 @@ public class ExpresionLlamada extends AbstractExpresion {
 		this.nombre = nombre;
 		this.expresion = expresion;
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(expresion);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(expresion);
 	}
 
 	public ExpresionLlamada(Object nombre, Object expresion) {
-		this.nombre = (nombre instanceof Token) ? ((Token)nombre).getText() : (String) nombre;
+		this.nombre = (nombre instanceof Token) ? ((Token) nombre).getText() : (String) nombre;
 		this.expresion = this.<Expresion>getAstFromContexts(expresion);
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(nombre, expresion);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(nombre, expresion);
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -41,12 +42,13 @@ public class ExpresionLlamada extends AbstractExpresion {
 	public List<Expresion> getExpresion() {
 		return expresion;
 	}
+
 	public void setExpresion(List<Expresion> expresion) {
 		this.expresion = expresion;
 	}
 
 	@Override
-	public Object accept(Visitor v, Object param) { 
+	public Object accept(Visitor v, Object param) {
 		return v.visit(this, param);
 	}
 
@@ -54,6 +56,16 @@ public class ExpresionLlamada extends AbstractExpresion {
 	private List<Expresion> expresion;
 
 	public String toString() {
-       return "{nombre:" + getNombre() + ", expresion:" + getExpresion() + "}";
-   }
+		return "{nombre:" + getNombre() + ", expresion:" + getExpresion() + "}";
+	}
+
+	private DefFuncion defFuncion;
+
+	public DefFuncion getDefinicion() {
+		return defFuncion;
+	}
+
+	public void setDefinicion(DefFuncion definicion) {
+		this.defFuncion = definicion;
+	}
 }

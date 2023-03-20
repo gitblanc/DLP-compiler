@@ -1,0 +1,27 @@
+/*
+Este ejemplo tiene varios errores sem�nticos que el compilador debe detectar en la
+fase de identificaci�n y otros que no deben ser detectados a�n.
+
+NOTA: Es posible que el alumno deba adaptar ligeramente la sintaxis de este ejemplo si no coincide
+con la del lenguaje que le corresponde.
+*/
+
+
+// ------------- 
+dobleSuma() {
+}
+
+prueba() {
+}
+
+main() {
+	print f();	// Funci�n no definida 
+	g(2);		// Procedimiento no definido 
+	
+	dobleSuma();
+	dobleSuma(5.6);	// No error en esta fase aunque no coincidan par�metros 
+}
+
+dobleSuma() {	// Funci�n repetida 
+
+}

@@ -6,4 +6,8 @@ package ast;
 
 public interface Sentencia extends AST {
 
+	public DefFuncion getFunction();
+
+	void setFuncion(DefFuncion function);
+
 }

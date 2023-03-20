@@ -9,52 +9,54 @@ import org.antlr.v4.runtime.*;
 
 import visitor.Visitor;
 
-
 //	defStruct:definicion -> nombre:String  definicion:definicion*
 
 public class DefStruct extends AbstractDefinicion {
 
-	public DefStruct(String nombre, List<Definicion> definicion) {
+	public DefStruct(String nombre, List<VariableStruct> varstruct) {
 		this.nombre = nombre;
-		this.definicion = definicion;
+		this.varstruct = varstruct;
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(definicion);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(varstruct);
 	}
 
-	public DefStruct(Object nombre, Object definicion) {
-		this.nombre = (nombre instanceof Token) ? ((Token)nombre).getText() : (String) nombre;
-		this.definicion = this.<Definicion>getAstFromContexts(definicion);
+	public DefStruct(Object nombre, Object varstruct) {
+		this.nombre = (nombre instanceof Token) ? ((Token) nombre).getText() : (String) nombre;
+		this.varstruct = this.<VariableStruct>getAstFromContexts(varstruct);
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(nombre, definicion);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(nombre, varstruct);
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public List<Definicion> getDefinicion() {
-		return definicion;
+	public List<VariableStruct> getVariableStruct() {
+		return varstruct;
 	}
-	public void setDefinicion(List<Definicion> definicion) {
-		this.definicion = definicion;
+
+	public void setVariableStruct(List<VariableStruct> varstruct) {
+		this.varstruct = varstruct;
 	}
 
 	@Override
-	public Object accept(Visitor v, Object param) { 
+	public Object accept(Visitor v, Object param) {
 		return v.visit(this, param);
 	}
 
 	private String nombre;
-	private List<Definicion> definicion;
+	private List<VariableStruct> varstruct;
 
 	public String toString() {
-       return "{nombre:" + getNombre() + ", definicion:" + getDefinicion() + "}";
-   }
+		return "{nombre:" + getNombre() + ", varstruct:" + getVariableStruct() + "}";
+	}
+
 }

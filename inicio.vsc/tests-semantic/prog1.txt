@@ -1,0 +1,36 @@
+struct Punto {
+	x:int;
+	y:int;
+};
+var b:int;
+
+main() {
+	d = b; //error d no es definida
+	f(8);
+}
+
+var p:int;
+
+f(p:int) { //la funcion f no es deinifida
+	var p:int; //la variable local no se puede llamar igual que el parámetro
+}
+
+struct Punto { //punto está dos veces
+	x:float;
+	y:float;
+};
+
+struct Persona {
+	a: [20]Empresa; //error
+};
+
+
+f():float { //f se ha definido dos veces
+
+}
+
+var b:char; //b ya estaba definida
+
+//Errores de esta fase
+//Simbolo no definido (variables, funciones y estructuras)
+//Simbolo ya ha sido definido

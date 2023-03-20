@@ -122,7 +122,7 @@ public class ASTPrinter extends DefaultVisitor {
 		printName(indent, "DefStruct", node, false);
 
 		print(indent + 1, "nombre", "String", node.getNombre());
-		visit(indent + 1, "definicion", "List<Definicion>",node.getDefinicion());
+		visit(indent + 1, "variablesStruct", "List<VariableStruct>",node.getVariableStruct());
 		return null;
 	}
 
