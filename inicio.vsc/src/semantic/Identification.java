@@ -102,7 +102,7 @@ public class Identification extends DefaultVisitor {
 
 	// VARIABLES
 	public Object visit(DefVariable node, Object param) {
-		DefVariable definicion = variables.getFromAny(node.getNombre());
+		DefVariable definicion = variables.getFromTop(node.getNombre());
 		predicado(definicion == null, "Variable ya definida: " + node.getNombre(), node);
 		variables.put(node.getNombre(), node);
 
