@@ -19,4 +19,10 @@ public class IntTipo extends AbstractTipo {
 	public String toString() {
        return "{IntTipo}";
    }
+
+
+	@Override
+	public int getSize() {
+		return 2;
+	}
 }

@@ -4,10 +4,9 @@
 
 package ast;
 
-import java.util.*;
-import org.antlr.v4.runtime.*;
+import java.util.List;
 
-import visitor.*;
+import visitor.Visitor;
 
 //	if:sentencia -> condicion:expresion  if_true:sentencia*  if_false:sentencia*
 

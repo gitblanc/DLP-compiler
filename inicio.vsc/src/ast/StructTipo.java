@@ -52,4 +52,13 @@ public class StructTipo extends AbstractTipo {
 	}
 
 	private DefStruct definicion;
+
+	@Override
+	public int getSize() {
+		int size = 0;
+		for (VariableStruct campo : definicion.getVariableStruct()) {
+			size += campo.getTipo().getSize();
+		}
+		return size;
+	}
 }

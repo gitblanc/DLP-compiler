@@ -4,9 +4,7 @@
 
 package ast;
 
-import org.antlr.v4.runtime.*;
-
-import visitor.*;
+import visitor.Visitor;
 
 //	read:sentencia -> read:expresion
 

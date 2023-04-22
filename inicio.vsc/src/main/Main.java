@@ -28,10 +28,15 @@
 
 package main;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
+
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 
 import ast.AST;
+import codegeneration.CodeGeneration;
 import parser.GrammarLexer;
 import parser.GrammarParser;
 import recorreArbol.MyVisitorImplementation;
@@ -48,7 +53,8 @@ import visitor.ASTPrinter;
  * Generación de Código: 'MemoryAllocation.java' y 'CodeSelection.java'.
  */
 public class Main {
-	public static final String INPUT_FILE = "Test Comprobaciขn de Tipos2.txt"; // Fichero de prueba durante el desarrollo
+	public static final String INPUT_FILE = "Test Comprobaciขn de Tipos.txt"; // Fichero de prueba durante el
+																				// desarrollo
 	public static final String OUTPUT_FILE = "output.txt";
 
 	public static void main(String[] args) throws Exception {
@@ -87,18 +93,18 @@ public class Main {
 		}
 
 //        // 2. Fase de Análisis Semántico
-        SemanticAnalisys analyzer = new SemanticAnalisys(errorManager);
-        analyzer.analize(ast);
-        if (errorManager.errorsCount() > 0)
-            return ast;
+		SemanticAnalisys analyzer = new SemanticAnalisys(errorManager);
+		analyzer.analize(ast);
+		if (errorManager.errorsCount() > 0)
+			return ast;
 //
-//        // 3. Fase de Generación de Código
-//        File sourceFile = new File(sourceName);
-//        Writer out = new FileWriter(new File(sourceFile.getParent(), OUTPUT_FILE));
-//
-//        CodeGeneration generator = new CodeGeneration();
-//        generator.generate(sourceFile.getName(), ast, out);
-//        out.close();
+		// 3. Fase de Generación de Código
+		File sourceFile = new File(sourceName);
+		Writer out = new FileWriter(new File(sourceFile.getParent(), OUTPUT_FILE));
+
+		CodeGeneration generator = new CodeGeneration();
+		generator.generate(sourceFile.getName(), ast, out);
+		out.close();
 
 		return ast;
 	}

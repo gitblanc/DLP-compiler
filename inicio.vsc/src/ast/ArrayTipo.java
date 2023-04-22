@@ -16,23 +16,24 @@ public class ArrayTipo extends AbstractTipo {
 		this.posicion = posicion;
 		this.tipo = tipo;
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(tipo);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(tipo);
 	}
 
 	public ArrayTipo(Object posicion, Object tipo) {
-		this.posicion = (posicion instanceof Token) ? ((Token)posicion).getText() : (String) posicion;
+		this.posicion = (posicion instanceof Token) ? ((Token) posicion).getText() : (String) posicion;
 		this.tipo = (Tipo) getAST(tipo);
 
-       // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
-       // Obtiene la linea/columna a partir de las de los hijos.
-       setPositions(posicion, tipo);
+		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
+		// Obtiene la linea/columna a partir de las de los hijos.
+		setPositions(posicion, tipo);
 	}
 
 	public String getPosicion() {
 		return posicion;
 	}
+
 	public void setPosicion(String posicion) {
 		this.posicion = posicion;
 	}
@@ -40,12 +41,13 @@ public class ArrayTipo extends AbstractTipo {
 	public Tipo getTipo() {
 		return tipo;
 	}
+
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
 
 	@Override
-	public Object accept(Visitor v, Object param) { 
+	public Object accept(Visitor v, Object param) {
 		return v.visit(this, param);
 	}
 
@@ -53,6 +55,11 @@ public class ArrayTipo extends AbstractTipo {
 	private Tipo tipo;
 
 	public String toString() {
-       return "{posicion:" + getPosicion() + ", tipo:" + getTipo() + "}";
-   }
+		return "{posicion:" + getPosicion() + ", tipo:" + getTipo() + "}";
+	}
+
+	@Override
+	public int getSize() {
+		return tipo.getSize() * Integer.parseInt(posicion);
+	}
 }

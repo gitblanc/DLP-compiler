@@ -4,10 +4,9 @@
 
 package ast;
 
-import java.util.*;
-import org.antlr.v4.runtime.*;
+import java.util.List;
 
-import visitor.*;
+import visitor.Visitor;
 
 //	while:sentencia -> condicion:expresion  sentencia:sentencia*
 

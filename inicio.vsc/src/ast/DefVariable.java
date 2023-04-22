@@ -57,4 +57,14 @@ public class DefVariable extends AbstractDefinicion {
 	public String toString() {
 		return "{tipo:" + getTipo() + ", nombre:" + getNombre() + "}";
 	}
+
+	private int address;
+
+	public void setAddress(int address) {
+		this.address = address;
+	}
+
+	public int getAddress() {
+		return this.address;
+	}
 }

@@ -19,4 +19,10 @@ public class CharTipo extends AbstractTipo {
 	public String toString() {
        return "{CharTipo}";
    }
+
+
+	@Override
+	public int getSize() {
+		return 1;
+	}
 }

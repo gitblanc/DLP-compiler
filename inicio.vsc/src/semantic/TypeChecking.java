@@ -385,9 +385,9 @@ public class TypeChecking extends DefaultVisitor {
 			errorManager.notify("Type Checking", errorMessage, position);
 	}
 
-	private void predicado(boolean condition, String errorMessage) {
-		predicado(condition, errorMessage, (Position) null);
-	}
+//	private void predicado(boolean condition, String errorMessage) {
+//		predicado(condition, errorMessage, (Position) null);
+//	}
 
 	// Método que nos permite saber si un tipo es primitivo (char real o entero)
 	private boolean esTipoSimple(Tipo tipo) {

@@ -9,7 +9,6 @@ import ast.Asignacion;
 import ast.Cast;
 import ast.CharTipo;
 import ast.DefFuncion;
-import ast.DefStruct;
 import ast.DefVariable;
 import ast.Definicion;
 import ast.Expresion;
