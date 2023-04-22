@@ -81,7 +81,9 @@ expresion returns[Expresion ast]
 	| expresion '.' IDENT { $ast = new Struct($ctx.expresion(0), $IDENT); }
 	| '!' expresion { $ast = new ExpresionDistinto($expresion.ast); }
 	| expresion op=('*'|'/'|'%'|'+'|'-') expresion { $ast = new ExpresionAritmetica($ctx.expresion(0), $op, $ctx.expresion(1)); }
-	| expresion op=('>'|'<'|'>='|'<='|'=='|'!='|'&&'|'||') expresion { $ast = new ExpresionLogica($ctx.expresion(0), $op, $ctx.expresion(1)); }
+	| expresion op=('>'|'<'|'>='|'<='|'=='|'!=') expresion { $ast = new ExpresionLogica($ctx.expresion(0), $op, $ctx.expresion(1)); }
+	| expresion '&&' expresion { $ast = new ExpresionLogicaAndOr($ctx.expresion(0), "&&", $ctx.expresion(1));}
+	| expresion '||' expresion { $ast = new ExpresionLogicaAndOr($ctx.expresion(0), "||", $ctx.expresion(1));}
 	;
 
 

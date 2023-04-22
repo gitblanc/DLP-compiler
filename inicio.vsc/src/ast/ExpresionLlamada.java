@@ -68,4 +68,9 @@ public class ExpresionLlamada extends AbstractExpresion {
 	public void setDefinicion(DefFuncion definicion) {
 		this.defFuncion = definicion;
 	}
+
+	public DefFuncion getFunction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

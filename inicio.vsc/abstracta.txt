@@ -27,6 +27,7 @@ return:sentencia -> retorno:expresion;
 
 expresionAritmetica:expresion -> izquierda:expresion operador:string derecha:expresion;
 expresionLogica:expresion -> izquierda:expresion operador:string derecha:expresion;
+expresionLogicaAndOr:expresion -> izquierda:expresion operador:string derecha:expresion;
 expresionDistinto:expresion ->not:expresion;
 
 variable:expresion -> nombre:string;

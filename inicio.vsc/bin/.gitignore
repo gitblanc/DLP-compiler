@@ -1,2 +1,5 @@
+/parser/
+/ast/
+/visitor/
 /semantic/
 /main/

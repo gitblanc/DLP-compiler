@@ -193,7 +193,25 @@ public class TypeChecking extends DefaultVisitor {
 		return null;
 	}
 
-//	class ExpresionLogica { Expresion izquierda;  String operador;  Expresion derecha; }
+//	class ExpresionLogicaAndOr { Expresion izquierda;  String operador;  Expresion derecha; }
+	public Object visit(ExpresionLogicaAndOr node, Object param) {
+		if (node.getIzquierda() != null)
+			node.getIzquierda().accept(this, param);
+		if (node.getDerecha() != null)
+			node.getDerecha().accept(this, param);
+
+		predicado(
+				(node.getIzquierda().getTipo() instanceof IntTipo)
+						&& (mismoTipo(node.getIzquierda().getTipo(), node.getDerecha().getTipo())),
+				"Error: los operandos deben ser de tipo entero", node);
+
+		node.setTipo(node.getIzquierda().getTipo());
+		node.setModificable(false);
+
+		return null;
+	}
+
+//	class ExpresionLogicaAndOr { Expresion izquierda;  String operador;  Expresion derecha; }
 	public Object visit(ExpresionLogica node, Object param) {
 		if (node.getIzquierda() != null)
 			node.getIzquierda().accept(this, param);
@@ -204,11 +222,10 @@ public class TypeChecking extends DefaultVisitor {
 				(node.getIzquierda().getTipo() instanceof IntTipo || node.getIzquierda().getTipo() instanceof RealTipo),
 				"Error: los operandos deben ser de tipo entero o real", node);
 		predicado(mismoTipo(node.getIzquierda().getTipo(), node.getDerecha().getTipo()),
-				"Error: los operandos deben ser del mismo tipo", node);
+				"Error: los operandos deben de ser del mismo tipo", node);
 
-		node.setTipo(node.getIzquierda().getTipo());
+		node.setTipo(new IntTipo());
 		node.setModificable(false);
-
 		return null;
 	}
 

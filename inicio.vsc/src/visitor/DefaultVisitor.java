@@ -228,4 +228,14 @@ public class DefaultVisitor implements Visitor {
 			for (AST child : children)
 				child.accept(this, param);
 	}
+
+	// class ExpresionLogicaAndOr { Expresion izquierda; String operador; Expresion
+	// derecha; }
+	public Object visit(ExpresionLogicaAndOr node, Object param) {
+		if (node.getIzquierda() != null)
+			node.getIzquierda().accept(this, param);
+		if (node.getDerecha() != null)
+			node.getDerecha().accept(this, param);
+		return null;
+	}
 }

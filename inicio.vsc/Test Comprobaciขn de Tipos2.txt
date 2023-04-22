@@ -1,0 +1,8 @@
+j(a:int, b:float):float {
+	return 1.2;
+}
+
+main() {
+	j(12, 12.5);
+	j(12, 12); // Tipo de los parámetros no coincide
+}
