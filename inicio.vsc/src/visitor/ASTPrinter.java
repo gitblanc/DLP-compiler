@@ -112,6 +112,9 @@ public class ASTPrinter extends DefaultVisitor {
 
 		visit(indent + 1, "tipo", "Tipo",node.getTipo());
 		print(indent + 1, "nombre", "String", node.getNombre());
+		
+		// ESTA ES LA LINEA NUEVA <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        print(indent + 1, "address", "int", node.getAddress());
 		return null;
 	}
 

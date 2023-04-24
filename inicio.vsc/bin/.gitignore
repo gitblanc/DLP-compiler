@@ -1,7 +1,2 @@
-/parser/
-/ast/
 /visitor/
-/semantic/
 /main/
-/recorreArbol/
-/codegeneration/
