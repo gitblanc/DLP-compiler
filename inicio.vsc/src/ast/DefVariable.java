@@ -12,18 +12,20 @@ import visitor.*;
 
 public class DefVariable extends AbstractDefinicion {
 
-	public DefVariable(Tipo tipo, String nombre) {
+	public DefVariable(Tipo tipo, String nombre, String ambito) {
 		this.tipo = tipo;
 		this.nombre = nombre;
+		this.ambito = ambito;
 
 		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
 		// Obtiene la linea/columna a partir de las de los hijos.
 		setPositions(tipo);
 	}
 
-	public DefVariable(Object tipo, Object nombre) {
+	public DefVariable(Object tipo, Object nombre, Object ambito) {
 		this.tipo = (Tipo) getAST(tipo);
 		this.nombre = (nombre instanceof Token) ? ((Token) nombre).getText() : (String) nombre;
+		this.ambito = (ambito instanceof Token) ? ((Token) ambito).getText() : (String) ambito;
 
 		// Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
 		// Obtiene la linea/columna a partir de las de los hijos.
@@ -46,6 +48,14 @@ public class DefVariable extends AbstractDefinicion {
 		this.nombre = nombre;
 	}
 
+	public String getAmbito() {
+		return ambito;
+	}
+
+	public void setAmbito(String ambito) {
+		this.ambito = ambito;
+	}
+
 	@Override
 	public Object accept(Visitor v, Object param) {
 		return v.visit(this, param);
@@ -53,9 +63,11 @@ public class DefVariable extends AbstractDefinicion {
 
 	private Tipo tipo;
 	private String nombre;
+	private String ambito;
+	private Parametros param;
 
 	public String toString() {
-		return "{tipo:" + getTipo() + ", nombre:" + getNombre() + "}";
+		return "{tipo:" + getTipo() + ", nombre:" + getNombre() + ", ambito:" + getAmbito() + "}";
 	}
 
 	private int address;
@@ -66,5 +78,13 @@ public class DefVariable extends AbstractDefinicion {
 
 	public int getAddress() {
 		return this.address;
+	}
+
+	public Parametros getParametro() {
+		return param;
+	}
+
+	public void setParam(Parametros node) {
+		this.param = node;
 	}
 }

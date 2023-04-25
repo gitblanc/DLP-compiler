@@ -2,3 +2,5 @@
 /semantic/
 /ast/
 /codegeneration/
+/visitor/
+/parser/

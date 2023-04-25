@@ -232,6 +232,7 @@ public class GrammarParser extends Parser {
 				{
 				setState(42);
 				((DefinicionContext)_localctx).defVariable = defVariable();
+				((DefinicionContext)_localctx).defVariable.ast.setAmbito("global");
 				 ((DefinicionContext)_localctx).ast =  ((DefinicionContext)_localctx).defVariable.ast; 
 				}
 				break;
@@ -306,7 +307,7 @@ public class GrammarParser extends Parser {
 			((DefVariableContext)_localctx).tipo = tipo();
 			setState(62);
 			match(T__3);
-			 ((DefVariableContext)_localctx).ast =  new DefVariable(((DefVariableContext)_localctx).tipo.ast, ((DefVariableContext)_localctx).IDENT); 
+			 ((DefVariableContext)_localctx).ast =  new DefVariable(((DefVariableContext)_localctx).tipo.ast, ((DefVariableContext)_localctx).IDENT, ""); 
 			}
 		}
 		catch (RecognitionException re) {
@@ -536,6 +537,7 @@ public class GrammarParser extends Parser {
 				{
 				setState(103);
 				((VariablesContext)_localctx).defVariable = defVariable();
+				((VariablesContext)_localctx).defVariable.ast.setAmbito("local");
 				 _localctx.lista.add(((VariablesContext)_localctx).defVariable.ast); 
 				}
 				}

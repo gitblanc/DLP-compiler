@@ -110,7 +110,7 @@ public class Identification extends DefaultVisitor {
 	}
 
 	public Object visit(Parametros node, Object param) {
-		DefVariable definicion = new DefVariable(node.getTipo(), node.getNombre());
+		DefVariable definicion = new DefVariable(node.getTipo(), node.getNombre(), "param");
 		definicion.setPositions(node);
 		predicado(variables.getFromTop(node.getNombre()) == null, "Parámetro repetido: " + node.getNombre(), node);
 

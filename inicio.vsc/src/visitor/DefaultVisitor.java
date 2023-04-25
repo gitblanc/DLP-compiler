@@ -20,7 +20,7 @@ public class DefaultVisitor implements Visitor {
 		return null;
 	}
 
-	// class DefVariable { Tipo tipo; String nombre; }
+	// class DefVariable { Tipo tipo; String nombre; String ambito }
 	public Object visit(DefVariable node, Object param) {
 		if (node.getTipo() != null)
 			node.getTipo().accept(this, param);

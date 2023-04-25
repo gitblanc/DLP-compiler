@@ -12,19 +12,58 @@ y:float
 #line 25
 main:
 enter 0
+pushi 1111
+pushf 2222.2
+pusha 6
+push 2
+pushi 3
+mul
+add
+pushi 3333
+pusha 16
+push 0
+add
+pushf 4444.4
 #line 31
+pusha 0
+loadi
 outi
 pushb 32
 outb
 #line 32
+pusha 2
+loadf
+pusha 16
+push 0
+add
+loadf
+addf
 outf
 pushb 32
 outb
 #line 33
+pusha 6
+push 2
+pushi 3
+mul
+add
+loadi
 outi
 pushb 10
 outb
 #line 35
+pusha 0
+loadi
+pushi 0
+gti
+pusha 2
+loadf
+pushf 3333.3
+ltf
+and
 outi
 #line 36
+pusha 2
+loadf
+f2i
 outi

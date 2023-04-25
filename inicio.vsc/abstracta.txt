@@ -4,7 +4,7 @@ definicion, sentencia, tipo, expresion
 NODES
 program -> definicion*;
 
-defVariable:definicion -> tipo:tipo nombre:string;
+defVariable:definicion -> tipo:tipo nombre:string ambito:string;
 defStruct:definicion -> nombre:string definicion*;
 defFuncion:definicion -> nombre:string parametros* tipo defVariable* sentencia*;
 
