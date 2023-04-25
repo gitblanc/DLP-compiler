@@ -23,4 +23,14 @@ public class RealTipo extends AbstractTipo {
 	public int getSize() {
 		return 4;
 	}
+
+	@Override
+	public String getNombreMAPL() {
+		return "float";
+	}
+
+	@Override
+	public char getSufijo() {
+		return 'f';
+	}
 }

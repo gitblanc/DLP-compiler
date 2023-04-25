@@ -39,7 +39,6 @@ import ast.AST;
 import codegeneration.CodeGeneration;
 import parser.GrammarLexer;
 import parser.GrammarParser;
-import recorreArbol.MyVisitorImplementation;
 import semantic.SemanticAnalisys;
 import visitor.ASTPrinter;
 
@@ -53,7 +52,7 @@ import visitor.ASTPrinter;
  * Generación de Código: 'MemoryAllocation.java' y 'CodeSelection.java'.
  */
 public class Main {
-	public static final String INPUT_FILE = "Test Comprobaciขn de Tipos3.txt"; // Fichero de prueba durante el
+	public static final String INPUT_FILE = "Test de Generación de Código básico.txt"; // Fichero de prueba durante el
 																				// desarrollo
 	public static final String OUTPUT_FILE = "output.txt";
 
@@ -66,9 +65,9 @@ public class Main {
 
 		ASTPrinter.toHtml(INPUT_FILE, ast, "AST"); // Utilidad generada por VGen (opcional)
 
-		MyVisitorImplementation myVisitor = new MyVisitorImplementation();
+//		MyVisitorImplementation myVisitor = new MyVisitorImplementation();
 
-		ast.accept(myVisitor, null);
+//		ast.accept(myVisitor, null);
 	}
 
 	/**

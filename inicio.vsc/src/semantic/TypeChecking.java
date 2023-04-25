@@ -60,10 +60,10 @@ public class TypeChecking extends DefaultVisitor {
 
 		predicado(mismoTipo(node.getIzquierda().getTipo(), node.getDerecha().getTipo()),
 				"Error: no se puede asignar (expresiones son de tipos distintos)", node);
-		predicado(esTipoSimple(node.getIzquierda().getTipo()),
-				"Error: no se puede asignar (la expresion de la izquierda no es de tipo primitivo)", node);
 		predicado(node.getIzquierda().isModificable(),
 				"Error: no se puede asignar (la expresion de la izquierda no es modificable)", node);
+		predicado(esTipoSimple(node.getIzquierda().getTipo()),
+				"Error: no se puede asignar (la expresion de la izquierda no es de tipo primitivo)", node);
 
 		return null;
 	}
@@ -205,7 +205,7 @@ public class TypeChecking extends DefaultVisitor {
 						&& (mismoTipo(node.getIzquierda().getTipo(), node.getDerecha().getTipo())),
 				"Error: los operandos deben ser de tipo entero", node);
 
-		node.setTipo(node.getIzquierda().getTipo());
+		node.setTipo(new IntTipo());
 		node.setModificable(false);
 
 		return null;
@@ -311,6 +311,8 @@ public class TypeChecking extends DefaultVisitor {
 
 		predicado(node.getNombre().getTipo() instanceof StructTipo, "Error: el tipo del struct es necesario", node);
 
+		node.setModificable(true);
+		
 		if (node.getNombre().getTipo() instanceof StructTipo) {
 			StructTipo st = (StructTipo) node.getNombre().getTipo();
 			DefStruct s = (DefStruct) st.getDefinicion();

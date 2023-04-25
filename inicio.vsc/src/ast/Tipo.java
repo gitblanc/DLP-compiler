@@ -8,4 +8,8 @@ public interface Tipo extends AST {
 
 	int getSize();
 
+	String getNombreMAPL();
+
+	char getSufijo();
+
 }

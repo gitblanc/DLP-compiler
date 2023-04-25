@@ -62,4 +62,14 @@ public class ArrayTipo extends AbstractTipo {
 	public int getSize() {
 		return tipo.getSize() * Integer.parseInt(posicion);
 	}
+
+	@Override
+	public String getNombreMAPL() {
+		return posicion + "*" + getTipo().getNombreMAPL();
+	}
+
+	@Override
+	public char getSufijo() {
+		return tipo.getSufijo();
+	}
 }

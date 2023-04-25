@@ -59,4 +59,14 @@ public class DefStruct extends AbstractDefinicion {
 		return "{nombre:" + getNombre() + ", varstruct:" + getVariableStruct() + "}";
 	}
 
+	private DefVariable definicion;
+
+	public DefVariable getDefinicion() {
+		return definicion;
+	}
+
+	public void setDefinition(DefVariable definicion) {
+		this.definicion = definicion;
+	}
+
 }

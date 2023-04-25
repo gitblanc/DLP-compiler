@@ -1,0 +1,30 @@
+#source "Test de Generación de Código básico.txt"
+call main
+halt
+#GLOBAL a:int
+#GLOBAL b:float
+#TYPE Punto:{
+x:float
+y:float
+}
+#GLOBAL v:5*int
+#GLOBAL p:Punto
+#line 25
+main:
+enter 0
+#line 31
+outi
+pushb 32
+outb
+#line 32
+outf
+pushb 32
+outb
+#line 33
+outi
+pushb 10
+outb
+#line 35
+outi
+#line 36
+outi

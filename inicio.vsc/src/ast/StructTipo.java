@@ -61,4 +61,14 @@ public class StructTipo extends AbstractTipo {
 		}
 		return size;
 	}
+
+	@Override
+	public String getNombreMAPL() {
+		return getNombre();
+	}
+
+	@Override
+	public char getSufijo() {
+		return 0;
+	}
 }

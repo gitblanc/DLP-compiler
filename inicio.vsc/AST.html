@@ -22,49 +22,87 @@
 <body><pre>
 [ASTPrinter] -------------------------------- line:col  line:col
 
-<span class="dots"></span>Program &rarr;                                                   <span class="pos">1:8  14:8    </span><span class="sourceText">struct </span><span class="posText">Persona {</span><span class="sourceText"> ... </span><span class="posText">print 2</span><span class="sourceText">;</span>
+<span class="dots"></span>Program &rarr;                                                   <span class="pos">14:5  36:14  </span><span class="sourceText">var </span><span class="posText">a:int;</span><span class="sourceText"> ... </span><span class="posText">print <int>(b</span><span class="sourceText">);			// 2222</span>
 <span class="dots">.  </span>definicion  <span class="type">List&lt;Definicion&gt;</span> = 
-<span class="dots">.  .  </span>DefStruct &rarr;                                           <span class="pos">1:8  3:10    </span><span class="sourceText">struct </span><span class="posText">Persona {</span><span class="sourceText"> ... </span><span class="posText">meses:[12</span><span class="sourceText">] int;</span>
-<span class="dots">.  .  |  </span>"<span class="value">Persona</span>"  
-<span class="dots">.  .  |  </span>variablesStruct  <span class="type">List&lt;VariableStruct&gt;</span> = 
-<span class="dots">.  .  |  .  </span>VariableStruct &rarr;                                <span class="pos">2:2  2:5     </span><span class="sourceText"></span><span class="posText">edad</span><span class="sourceText">:int;</span>
-<span class="dots">.  .  |  .  |  </span>"<span class="value">edad</span>"  
-<span class="dots">.  .  |  .  |  </span><span class="value">IntTipo</span> &rarr;                                    <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  .  </span>VariableStruct &rarr;                                <span class="pos">3:2  3:10    </span><span class="sourceText"></span><span class="posText">meses:[12</span><span class="sourceText">] int;</span>
-<span class="dots">.  .  |  .  |  </span>"<span class="value">meses</span>"  
-<span class="dots">.  .  |  .  |  </span>ArrayTipo &rarr;                                  <span class="pos">3:9  3:10    </span><span class="sourceText">meses:[</span><span class="posText">12</span><span class="sourceText">] int;</span>
-<span class="dots">.  .  |  .  |  .  </span>"<span class="value">12</span>"  
-<span class="dots">.  .  |  .  |  .  </span><span class="value">IntTipo</span> &rarr;                                 <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">6:5  6:16    </span><span class="sourceText">var </span><span class="posText">juan:Persona</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  </span>"Persona"  <span class="type">StructTipo.nombre</span>                       <span class="pos">6:10  6:16   </span><span class="sourceText">var juan:</span><span class="posText">Persona</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  </span>"<span class="value">juan</span>"  
-<span class="dots">.  .  |  </span><span class="value">0</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">7:5  7:17    </span><span class="sourceText">var </span><span class="posText">anton:Persona</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  </span>"Persona"  <span class="type">StructTipo.nombre</span>                       <span class="pos">7:11  7:17   </span><span class="sourceText">var anton:</span><span class="posText">Persona</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  </span>"<span class="value">anton</span>"  
-<span class="dots">.  .  |  </span><span class="value">26</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">9:5  9:5     </span><span class="sourceText">var </span><span class="posText">i</span><span class="sourceText">:int;</span>
+<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">14:5  14:5   </span><span class="sourceText">var </span><span class="posText">a</span><span class="sourceText">:int;</span>
 <span class="dots">.  .  |  </span><span class="value">IntTipo</span> &rarr;                                          <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  </span>"<span class="value">i</span>"  
-<span class="dots">.  .  |  </span><span class="value">52</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">10:6  10:6   </span><span class="sourceText">var </span><span class="posText">f</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  |  </span>"<span class="value">a</span>"  
+<span class="dots">.  .  |  </span><span class="value">0</span>  <span class="type">int</span>
+<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">15:5  15:5   </span><span class="sourceText">var </span><span class="posText">b</span><span class="sourceText">:float;</span>
 <span class="dots">.  .  |  </span><span class="value">RealTipo</span> &rarr;                                         <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  </span>"<span class="value">f</span>"  
-<span class="dots">.  .  |  </span><span class="value">54</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">11:6  11:10  </span><span class="sourceText">var </span><span class="posText">v:[10</span><span class="sourceText">]int;</span>
-<span class="dots">.  .  |  </span>ArrayTipo &rarr;                                        <span class="pos">11:9  11:10  </span><span class="sourceText">var v:[</span><span class="posText">10</span><span class="sourceText">]int;</span>
-<span class="dots">.  .  |  .  </span>"<span class="value">10</span>"  
+<span class="dots">.  .  |  </span>"<span class="value">b</span>"  
+<span class="dots">.  .  |  </span><span class="value">2</span>  <span class="type">int</span>
+<span class="dots">.  .  </span>DefStruct &rarr;                                           <span class="pos">17:8  19:2   </span><span class="sourceText">struct </span><span class="posText">Punto {</span><span class="sourceText"> ... </span><span class="posText">y</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  |  </span>"<span class="value">Punto</span>"  
+<span class="dots">.  .  |  </span>variablesStruct  <span class="type">List&lt;VariableStruct&gt;</span> = 
+<span class="dots">.  .  |  .  </span>VariableStruct &rarr;                                <span class="pos">18:2  18:2   </span><span class="sourceText"></span><span class="posText">x</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">x</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  </span>VariableStruct &rarr;                                <span class="pos">19:2  19:2   </span><span class="sourceText"></span><span class="posText">y</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">y</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">22:5  22:8   </span><span class="sourceText">var </span><span class="posText">v:[5</span><span class="sourceText">]int;</span>
+<span class="dots">.  .  |  </span>ArrayTipo &rarr;                                        <span class="pos">22:8  22:8   </span><span class="sourceText">var v:[</span><span class="posText">5</span><span class="sourceText">]int;</span>
+<span class="dots">.  .  |  .  </span>"<span class="value">5</span>"  
 <span class="dots">.  .  |  .  </span><span class="value">IntTipo</span> &rarr;                                       <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
 <span class="dots">.  .  |  </span>"<span class="value">v</span>"  
-<span class="dots">.  .  |  </span><span class="value">58</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefFuncion &rarr;                                          <span class="pos">13:1  14:8   </span><span class="sourceText"></span><span class="posText">main(){</span><span class="sourceText"> ... </span><span class="posText">print 2</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  </span><span class="value">6</span>  <span class="type">int</span>
+<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">23:5  23:11  </span><span class="sourceText">var </span><span class="posText">p:Punto</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  </span>"Punto"  <span class="type">StructTipo.nombre</span>                         <span class="pos">23:7  23:11  </span><span class="sourceText">var p:</span><span class="posText">Punto</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  </span>"<span class="value">p</span>"  
+<span class="dots">.  .  |  </span><span class="value">16</span>  <span class="type">int</span>
+<span class="dots">.  .  </span>DefFuncion &rarr;                                          <span class="pos">25:1  36:14  </span><span class="sourceText"></span><span class="posText">main() {</span><span class="sourceText"> ... </span><span class="posText">print <int>(b</span><span class="sourceText">);			// 2222</span>
 <span class="dots">.  .  |  </span>"<span class="value">main</span>"  
 <span class="dots">.  .  |  </span>parametros  <span class="type">List&lt;Parametros&gt;</span> = 
 <span class="dots">.  .  |  </span><span class="null">null</span>  tipo:<span class="type">Tipo</span>
 <span class="dots">.  .  |  </span>defvariable  <span class="type">List&lt;DefVariable&gt;</span> = 
 <span class="dots">.  .  |  </span>sentencia  <span class="type">List&lt;Sentencia&gt;</span> = 
-<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">14:8  14:8   </span><span class="sourceText">print </span><span class="posText">2</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  |  </span>"2"  <span class="type">LitEnt.valor</span>                            <span class="pos">14:8  14:8   </span><span class="sourceText">print </span><span class="posText">2</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">26:2  26:9   </span><span class="sourceText"></span><span class="posText">a = 1111</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>"a"  <span class="type">Ident.valor</span>                             <span class="pos">26:2  26:2   </span><span class="sourceText"></span><span class="posText">a</span><span class="sourceText"> = 1111;</span>
+<span class="dots">.  .  |  .  |  </span>"1111"  <span class="type">LitEnt.valor</span>                         <span class="pos">26:6  26:9   </span><span class="sourceText">a = </span><span class="posText">1111</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">27:2  27:11  </span><span class="sourceText"></span><span class="posText">b = 2222.2</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>"b"  <span class="type">Ident.valor</span>                             <span class="pos">27:2  27:2   </span><span class="sourceText"></span><span class="posText">b</span><span class="sourceText"> = 2222.2;</span>
+<span class="dots">.  .  |  .  |  </span>"2222.2"  <span class="type">LitReal.valor</span>                      <span class="pos">27:6  27:11  </span><span class="sourceText">b = </span><span class="posText">2222.2</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">28:2  28:12  </span><span class="sourceText"></span><span class="posText">v[3] = 3333</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>Array &rarr;                                      <span class="pos">28:2  28:4   </span><span class="sourceText"></span><span class="posText">v[3</span><span class="sourceText">] = 3333;</span>
+<span class="dots">.  .  |  .  |  .  </span>"v"  <span class="type">Ident.valor</span>                          <span class="pos">28:2  28:2   </span><span class="sourceText"></span><span class="posText">v</span><span class="sourceText">[3] = 3333;</span>
+<span class="dots">.  .  |  .  |  .  </span>"3"  <span class="type">LitEnt.valor</span>                         <span class="pos">28:4  28:4   </span><span class="sourceText">v[</span><span class="posText">3</span><span class="sourceText">] = 3333;</span>
+<span class="dots">.  .  |  .  |  </span>"3333"  <span class="type">LitEnt.valor</span>                         <span class="pos">28:9  28:12  </span><span class="sourceText">v[3] = </span><span class="posText">3333</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">29:2  29:13  </span><span class="sourceText"></span><span class="posText">p.y = 4444.4</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>Struct &rarr;                                     <span class="pos">29:2  29:4   </span><span class="sourceText"></span><span class="posText">p.y</span><span class="sourceText"> = 4444.4;</span>
+<span class="dots">.  .  |  .  |  .  </span>"p"  <span class="type">Ident.valor</span>                          <span class="pos">29:2  29:2   </span><span class="sourceText"></span><span class="posText">p</span><span class="sourceText">.y = 4444.4;</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">y</span>"  
+<span class="dots">.  .  |  .  |  </span>"4444.4"  <span class="type">LitReal.valor</span>                      <span class="pos">29:8  29:13  </span><span class="sourceText">p.y = </span><span class="posText">4444.4</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">31:10  31:10 </span><span class="sourceText">printsp </span><span class="posText">a</span><span class="sourceText">;		    // 1111</span>
+<span class="dots">.  .  |  .  |  </span>"a"  <span class="type">Ident.valor</span>                             <span class="pos">31:10  31:10 </span><span class="sourceText">printsp </span><span class="posText">a</span><span class="sourceText">;		    // 1111</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">sp</span>"  
+<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">32:10  32:16 </span><span class="sourceText">printsp </span><span class="posText">b + p.y</span><span class="sourceText">;	// 6666.6</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionAritmetica &rarr;                        <span class="pos">32:10  32:16 </span><span class="sourceText">printsp </span><span class="posText">b + p.y</span><span class="sourceText">;	// 6666.6</span>
+<span class="dots">.  .  |  .  |  .  </span>"b"  <span class="type">Ident.valor</span>                          <span class="pos">32:10  32:10 </span><span class="sourceText">printsp </span><span class="posText">b</span><span class="sourceText"> + p.y;	// 6666.6</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">+</span>"  
+<span class="dots">.  .  |  .  |  .  </span>Struct &rarr;                                  <span class="pos">32:14  32:16 </span><span class="sourceText">printsp b + </span><span class="posText">p.y</span><span class="sourceText">;	// 6666.6</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"p"  <span class="type">Ident.valor</span>                       <span class="pos">32:14  32:14 </span><span class="sourceText">printsp b + </span><span class="posText">p</span><span class="sourceText">.y;	// 6666.6</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"<span class="value">y</span>"  
+<span class="dots">.  .  |  .  |  </span>"<span class="value">sp</span>"  
+<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">33:10  33:12 </span><span class="sourceText">println </span><span class="posText">v[3</span><span class="sourceText">];		// 3333</span>
+<span class="dots">.  .  |  .  |  </span>Array &rarr;                                      <span class="pos">33:10  33:12 </span><span class="sourceText">println </span><span class="posText">v[3</span><span class="sourceText">];		// 3333</span>
+<span class="dots">.  .  |  .  |  .  </span>"v"  <span class="type">Ident.valor</span>                          <span class="pos">33:10  33:10 </span><span class="sourceText">println </span><span class="posText">v</span><span class="sourceText">[3];		// 3333</span>
+<span class="dots">.  .  |  .  |  .  </span>"3"  <span class="type">LitEnt.valor</span>                         <span class="pos">33:12  33:12 </span><span class="sourceText">println v[</span><span class="posText">3</span><span class="sourceText">];		// 3333</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">ln</span>"  
+<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">35:8  35:26  </span><span class="sourceText">print </span><span class="posText">a > 0 && b < 3333.3</span><span class="sourceText">;	// 1</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionLogica &rarr;                            <span class="pos">35:8  35:12  </span><span class="sourceText">print </span><span class="posText">a > 0</span><span class="sourceText"> && b < 3333.3;	// 1</span>
+<span class="dots">.  .  |  .  |  .  </span>"a"  <span class="type">Ident.valor</span>                          <span class="pos">35:8  35:8   </span><span class="sourceText">print </span><span class="posText">a</span><span class="sourceText"> > 0 && b < 3333.3;	// 1</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">></span>"  
+<span class="dots">.  .  |  .  |  .  </span>"0"  <span class="type">LitEnt.valor</span>                         <span class="pos">35:12  35:12 </span><span class="sourceText">print a > </span><span class="posText">0</span><span class="sourceText"> && b < 3333.3;	// 1</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionLogica &rarr;                            <span class="pos">35:17  35:26 </span><span class="sourceText">print a > 0 && </span><span class="posText">b < 3333.3</span><span class="sourceText">;	// 1</span>
+<span class="dots">.  .  |  .  |  .  </span>"b"  <span class="type">Ident.valor</span>                          <span class="pos">35:17  35:17 </span><span class="sourceText">print a > 0 && </span><span class="posText">b</span><span class="sourceText"> < 3333.3;	// 1</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value"><</span>"  
+<span class="dots">.  .  |  .  |  .  </span>"3333.3"  <span class="type">LitReal.valor</span>                   <span class="pos">35:21  35:26 </span><span class="sourceText">print a > 0 && b < </span><span class="posText">3333.3</span><span class="sourceText">;	// 1</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value"></span>"  
+<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">36:14  36:14 </span><span class="sourceText">print <int>(</span><span class="posText">b</span><span class="sourceText">);			// 2222</span>
+<span class="dots">.  .  |  .  |  </span>Cast &rarr;                                       <span class="pos">36:14  36:14 </span><span class="sourceText">print <int>(</span><span class="posText">b</span><span class="sourceText">);			// 2222</span>
+<span class="dots">.  .  |  .  |  .  </span><span class="value">IntTipo</span> &rarr;                                 <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  |  .  </span>"b"  <span class="type">Ident.valor</span>                          <span class="pos">36:14  36:14 </span><span class="sourceText">print <int>(</span><span class="posText">b</span><span class="sourceText">);			// 2222</span>
 <span class="dots">.  .  |  .  |  </span>"<span class="value"></span>"  
 
 [ASTPrinter] --------------------------------
