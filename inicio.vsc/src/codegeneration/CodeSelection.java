@@ -14,6 +14,7 @@ import java.util.Map;
 import ast.AST;
 import ast.Array;
 import ast.ArrayTipo;
+import ast.Asignacion;
 import ast.Cast;
 import ast.DefFuncion;
 import ast.DefStruct;
@@ -89,8 +90,8 @@ public class CodeSelection extends DefaultVisitor {
 	// class Program { List<Definicion> definicion; }
 	public Object visit(Program node, Object param) {
 		out("#source \"" + sourceFile + "\"");
-		out("call main");
-		out("halt");
+//		out("call main");
+//		out("halt");
 		visitChildren(node.getDefinicion(), param);
 		return null;
 	}
@@ -144,6 +145,16 @@ public class CodeSelection extends DefaultVisitor {
 		if (node.getTipo() != null) {
 			out("ret 0, " + sizeLocales + ", " + sizeParametros);
 		}
+
+		return null;
+	}
+
+	// class Asignacion { Expresion izquierda; Expresion derecha; }
+	public Object visit(Asignacion node, Object param) {
+		out("#line " + node.getEnd().getLine());
+		node.getIzquierda().accept(this, Funcion.DIRECCION);
+		node.getDerecha().accept(this, Funcion.VALOR);
+		out("store" + node.getIzquierda().getTipo().getSufijo());
 
 		return null;
 	}
