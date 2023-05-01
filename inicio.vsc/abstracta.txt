@@ -5,7 +5,7 @@ NODES
 program -> definicion*;
 
 defVariable:definicion -> tipo:tipo nombre:string ambito:string;
-defStruct:definicion -> nombre:string definicion*;
+defStruct:definicion -> nombre:string variableStruct*;
 defFuncion:definicion -> nombre:string parametros* tipo defVariable* sentencia*;
 
 parametros -> nombre:string tipo;

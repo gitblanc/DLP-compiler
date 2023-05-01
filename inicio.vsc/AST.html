@@ -22,91 +22,171 @@
 <body><pre>
 [ASTPrinter] -------------------------------- line:col  line:col
 
-<span class="dots"></span>Program &rarr;                                                   <span class="pos">14:5  36:14  </span><span class="sourceText">var </span><span class="posText">a:int;</span><span class="sourceText"> ... </span><span class="posText">print <int>(b</span><span class="sourceText">);			// 2222</span>
+<span class="dots"></span>Program &rarr;                                                   <span class="pos">17:1  59:59  </span><span class="sourceText"></span><span class="posText">potencia(base:float, exponente:int):float {</span><span class="sourceText"> ... </span><span class="posText">print letraHipoteca(precioVivienda, mesesHipoteca, interes</span><span class="sourceText">);</span>
 <span class="dots">.  </span>definicion  <span class="type">List&lt;Definicion&gt;</span> = 
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">14:5  14:5   </span><span class="sourceText">var </span><span class="posText">a</span><span class="sourceText">:int;</span>
-<span class="dots">.  .  |  </span><span class="value">IntTipo</span> &rarr;                                          <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  </span>"<span class="value">a</span>"  
-<span class="dots">.  .  |  </span>"<span class="value">global</span>"  
-<span class="dots">.  .  |  </span><span class="value">0</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">15:5  15:5   </span><span class="sourceText">var </span><span class="posText">b</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  </span>DefFuncion &rarr;                                          <span class="pos">17:1  33:13  </span><span class="sourceText"></span><span class="posText">potencia(base:float, exponente:int):float {</span><span class="sourceText"> ... </span><span class="posText">return total</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  </span>"<span class="value">potencia</span>"  
+<span class="dots">.  .  |  </span>parametros  <span class="type">List&lt;Parametros&gt;</span> = 
+<span class="dots">.  .  |  .  </span>Parametros &rarr;                                    <span class="pos">17:10  17:13 </span><span class="sourceText">potencia(</span><span class="posText">base</span><span class="sourceText">:float, exponente:int):float {</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">base</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  </span>Parametros &rarr;                                    <span class="pos">17:22  17:30 </span><span class="sourceText">potencia(base:float, </span><span class="posText">exponente</span><span class="sourceText">:int):float {</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">exponente</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">IntTipo</span> &rarr;                                    <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
 <span class="dots">.  .  |  </span><span class="value">RealTipo</span> &rarr;                                         <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  </span>"<span class="value">b</span>"  
-<span class="dots">.  .  |  </span>"<span class="value">global</span>"  
-<span class="dots">.  .  |  </span><span class="value">2</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefStruct &rarr;                                           <span class="pos">17:8  19:2   </span><span class="sourceText">struct </span><span class="posText">Punto {</span><span class="sourceText"> ... </span><span class="posText">y</span><span class="sourceText">:float;</span>
-<span class="dots">.  .  |  </span>"<span class="value">Punto</span>"  
-<span class="dots">.  .  |  </span>variablesStruct  <span class="type">List&lt;VariableStruct&gt;</span> = 
-<span class="dots">.  .  |  .  </span>VariableStruct &rarr;                                <span class="pos">18:2  18:2   </span><span class="sourceText"></span><span class="posText">x</span><span class="sourceText">:float;</span>
-<span class="dots">.  .  |  .  |  </span>"<span class="value">x</span>"  
+<span class="dots">.  .  |  </span>defvariable  <span class="type">List&lt;DefVariable&gt;</span> = 
+<span class="dots">.  .  |  .  </span>DefVariable &rarr;                                   <span class="pos">18:6  18:10  </span><span class="sourceText">var </span><span class="posText">total</span><span class="sourceText">:float;</span>
 <span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  .  </span>VariableStruct &rarr;                                <span class="pos">19:2  19:2   </span><span class="sourceText"></span><span class="posText">y</span><span class="sourceText">:float;</span>
-<span class="dots">.  .  |  .  |  </span>"<span class="value">y</span>"  
+<span class="dots">.  .  |  .  |  </span>"<span class="value">total</span>"  
+<span class="dots">.  .  |  .  |  </span>"<span class="value">local</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">-4</span>  <span class="type">int</span>
+<span class="dots">.  .  |  </span>sentencia  <span class="type">List&lt;Sentencia&gt;</span> = 
+<span class="dots">.  .  |  .  </span>If &rarr;                                            <span class="pos">20:6  29:29  </span><span class="sourceText">if (</span><span class="posText">exponente == 0) {</span><span class="sourceText"> ... </span><span class="posText">exponente = exponente - 1</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionLogica &rarr;                            <span class="pos">20:6  20:19  </span><span class="sourceText">if (</span><span class="posText">exponente == 0</span><span class="sourceText">) {</span>
+<span class="dots">.  .  |  .  |  .  </span>"exponente"  <span class="type">Ident.valor</span>                  <span class="pos">20:6  20:14  </span><span class="sourceText">if (</span><span class="posText">exponente</span><span class="sourceText"> == 0) {</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">==</span>"  
+<span class="dots">.  .  |  .  |  .  </span>"0"  <span class="type">LitEnt.valor</span>                         <span class="pos">20:19  20:19 </span><span class="sourceText">if (exponente == </span><span class="posText">0</span><span class="sourceText">) {</span>
+<span class="dots">.  .  |  .  |  </span>if_true  <span class="type">List&lt;Sentencia&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  </span>Asignacion &rarr;                              <span class="pos">21:3  21:13  </span><span class="sourceText"></span><span class="posText">total = 1.0</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"total"  <span class="type">Ident.valor</span>                   <span class="pos">21:3  21:7   </span><span class="sourceText"></span><span class="posText">total</span><span class="sourceText"> = 1.0;</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"1.0"  <span class="type">LitReal.valor</span>                   <span class="pos">21:11  21:13 </span><span class="sourceText">total = </span><span class="posText">1.0</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>if_false  <span class="type">List&lt;Sentencia&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  </span>If &rarr;                                      <span class="pos">23:7  29:29  </span><span class="sourceText">if (</span><span class="posText">exponente < 0) {</span><span class="sourceText"> ... </span><span class="posText">exponente = exponente - 1</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  </span>ExpresionLogica &rarr;                      <span class="pos">23:7  23:19  </span><span class="sourceText">if (</span><span class="posText">exponente < 0</span><span class="sourceText">) {</span>
+<span class="dots">.  .  |  .  |  .  |  .  </span>"exponente"  <span class="type">Ident.valor</span>            <span class="pos">23:7  23:15  </span><span class="sourceText">if (</span><span class="posText">exponente</span><span class="sourceText"> < 0) {</span>
+<span class="dots">.  .  |  .  |  .  |  .  </span>"<span class="value"><</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  </span>"0"  <span class="type">LitEnt.valor</span>                   <span class="pos">23:19  23:19 </span><span class="sourceText">if (exponente < </span><span class="posText">0</span><span class="sourceText">) {</span>
+<span class="dots">.  .  |  .  |  .  |  </span>if_true  <span class="type">List&lt;Sentencia&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  |  .  </span>Asignacion &rarr;                        <span class="pos">24:4  24:45  </span><span class="sourceText"></span><span class="posText">total = 1.0 / potencia(base, 0 - exponente</span><span class="sourceText">);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>"total"  <span class="type">Ident.valor</span>             <span class="pos">24:4  24:8   </span><span class="sourceText"></span><span class="posText">total</span><span class="sourceText"> = 1.0 / potencia(base, 0 - exponente);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>ExpresionAritmetica &rarr;            <span class="pos">24:12  24:45 </span><span class="sourceText">total = </span><span class="posText">1.0 / potencia(base, 0 - exponente</span><span class="sourceText">);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>"1.0"  <span class="type">LitReal.valor</span>          <span class="pos">24:12  24:14 </span><span class="sourceText">total = </span><span class="posText">1.0</span><span class="sourceText"> / potencia(base, 0 - exponente);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>"<span class="value">/</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>ExpresionLlamada &rarr;            <span class="pos">24:18  24:45 </span><span class="sourceText">total = 1.0 / </span><span class="posText">potencia(base, 0 - exponente</span><span class="sourceText">);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"<span class="value">potencia</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>expresion  <span class="type">List&lt;Expresion&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"base"  <span class="type">Ident.valor</span>     <span class="pos">24:27  24:30 </span><span class="sourceText">total = 1.0 / potencia(</span><span class="posText">base</span><span class="sourceText">, 0 - exponente);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>ExpresionAritmetica &rarr;   <span class="pos">24:33  24:45 </span><span class="sourceText">total = 1.0 / potencia(base, </span><span class="posText">0 - exponente</span><span class="sourceText">);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  |  </span>"0"  <span class="type">LitEnt.valor</span>    <span class="pos">24:33  24:33 </span><span class="sourceText">total = 1.0 / potencia(base, </span><span class="posText">0</span><span class="sourceText"> - exponente);</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  |  </span>"<span class="value">-</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  |  </span>"exponente"  <span class="type">Ident.valor</span><span class="pos">24:37  24:45 </span><span class="sourceText">total = 1.0 / potencia(base, 0 - </span><span class="posText">exponente</span><span class="sourceText">);</span>
+<span class="dots">.  .  |  .  |  .  |  </span>if_false  <span class="type">List&lt;Sentencia&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  |  .  </span>Asignacion &rarr;                        <span class="pos">26:4  26:15  </span><span class="sourceText"></span><span class="posText">total = base</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>"total"  <span class="type">Ident.valor</span>             <span class="pos">26:4  26:8   </span><span class="sourceText"></span><span class="posText">total</span><span class="sourceText"> = base;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>"base"  <span class="type">Ident.valor</span>              <span class="pos">26:12  26:15 </span><span class="sourceText">total = </span><span class="posText">base</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  </span>While &rarr;                             <span class="pos">27:11  29:29 </span><span class="sourceText">while (</span><span class="posText">exponente > 1) {</span><span class="sourceText"> ... </span><span class="posText">exponente = exponente - 1</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>ExpresionLogica &rarr;                <span class="pos">27:11  27:23 </span><span class="sourceText">while (</span><span class="posText">exponente > 1</span><span class="sourceText">) {</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>"exponente"  <span class="type">Ident.valor</span>      <span class="pos">27:11  27:19 </span><span class="sourceText">while (</span><span class="posText">exponente</span><span class="sourceText"> > 1) {</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>"<span class="value">></span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>"1"  <span class="type">LitEnt.valor</span>             <span class="pos">27:23  27:23 </span><span class="sourceText">while (exponente > </span><span class="posText">1</span><span class="sourceText">) {</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>sentencia  <span class="type">List&lt;Sentencia&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>Asignacion &rarr;                  <span class="pos">28:5  28:24  </span><span class="sourceText"></span><span class="posText">total = total * base</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"total"  <span class="type">Ident.valor</span>       <span class="pos">28:5  28:9   </span><span class="sourceText"></span><span class="posText">total</span><span class="sourceText"> = total * base;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>ExpresionAritmetica &rarr;      <span class="pos">28:13  28:24 </span><span class="sourceText">total = </span><span class="posText">total * base</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"total"  <span class="type">Ident.valor</span>    <span class="pos">28:13  28:17 </span><span class="sourceText">total = </span><span class="posText">total</span><span class="sourceText"> * base;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"<span class="value">*</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"base"  <span class="type">Ident.valor</span>     <span class="pos">28:21  28:24 </span><span class="sourceText">total = total * </span><span class="posText">base</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>Asignacion &rarr;                  <span class="pos">29:5  29:29  </span><span class="sourceText"></span><span class="posText">exponente = exponente - 1</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"exponente"  <span class="type">Ident.valor</span>   <span class="pos">29:5  29:13  </span><span class="sourceText"></span><span class="posText">exponente</span><span class="sourceText"> = exponente - 1;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>ExpresionAritmetica &rarr;      <span class="pos">29:17  29:29 </span><span class="sourceText">exponente = </span><span class="posText">exponente - 1</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"exponente"  <span class="type">Ident.valor</span><span class="pos">29:17  29:25 </span><span class="sourceText">exponente = </span><span class="posText">exponente</span><span class="sourceText"> - 1;</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"<span class="value">-</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"1"  <span class="type">LitEnt.valor</span>       <span class="pos">29:29  29:29 </span><span class="sourceText">exponente = exponente - </span><span class="posText">1</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Return &rarr;                                        <span class="pos">33:9  33:13  </span><span class="sourceText">return </span><span class="posText">total</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>"total"  <span class="type">Ident.valor</span>                         <span class="pos">33:9  33:13  </span><span class="sourceText">return </span><span class="posText">total</span><span class="sourceText">;</span>
+<span class="dots">.  .  </span>DefFuncion &rarr;                                          <span class="pos">37:1  41:83  </span><span class="sourceText"></span><span class="posText">letraHipoteca(capital:float, meses:int, interes:float):float {</span><span class="sourceText"> ... </span><span class="posText">return capital * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  |  </span>"<span class="value">letraHipoteca</span>"  
+<span class="dots">.  .  |  </span>parametros  <span class="type">List&lt;Parametros&gt;</span> = 
+<span class="dots">.  .  |  .  </span>Parametros &rarr;                                    <span class="pos">37:15  37:21 </span><span class="sourceText">letraHipoteca(</span><span class="posText">capital</span><span class="sourceText">:float, meses:int, interes:float):float {</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">capital</span>"  
 <span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">22:5  22:8   </span><span class="sourceText">var </span><span class="posText">v:[5</span><span class="sourceText">]int;</span>
-<span class="dots">.  .  |  </span>ArrayTipo &rarr;                                        <span class="pos">22:8  22:8   </span><span class="sourceText">var v:[</span><span class="posText">5</span><span class="sourceText">]int;</span>
-<span class="dots">.  .  |  .  </span>"<span class="value">5</span>"  
-<span class="dots">.  .  |  .  </span><span class="value">IntTipo</span> &rarr;                                       <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  </span>"<span class="value">v</span>"  
-<span class="dots">.  .  |  </span>"<span class="value">global</span>"  
-<span class="dots">.  .  |  </span><span class="value">6</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefVariable &rarr;                                         <span class="pos">23:5  23:11  </span><span class="sourceText">var </span><span class="posText">p:Punto</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  </span>"Punto"  <span class="type">StructTipo.nombre</span>                         <span class="pos">23:7  23:11  </span><span class="sourceText">var p:</span><span class="posText">Punto</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  </span>"<span class="value">p</span>"  
-<span class="dots">.  .  |  </span>"<span class="value">global</span>"  
-<span class="dots">.  .  |  </span><span class="value">16</span>  <span class="type">int</span>
-<span class="dots">.  .  </span>DefFuncion &rarr;                                          <span class="pos">25:1  36:14  </span><span class="sourceText"></span><span class="posText">main() {</span><span class="sourceText"> ... </span><span class="posText">print <int>(b</span><span class="sourceText">);			// 2222</span>
+<span class="dots">.  .  |  .  </span>Parametros &rarr;                                    <span class="pos">37:30  37:34 </span><span class="sourceText">letraHipoteca(capital:float, </span><span class="posText">meses</span><span class="sourceText">:int, interes:float):float {</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">meses</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">IntTipo</span> &rarr;                                    <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  </span>Parametros &rarr;                                    <span class="pos">37:41  37:47 </span><span class="sourceText">letraHipoteca(capital:float, meses:int, </span><span class="posText">interes</span><span class="sourceText">:float):float {</span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">interes</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  </span><span class="value">RealTipo</span> &rarr;                                         <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  </span>defvariable  <span class="type">List&lt;DefVariable&gt;</span> = 
+<span class="dots">.  .  |  .  </span>DefVariable &rarr;                                   <span class="pos">38:6  38:12  </span><span class="sourceText">var </span><span class="posText">mensual</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">mensual</span>"  
+<span class="dots">.  .  |  .  |  </span>"<span class="value">local</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">-4</span>  <span class="type">int</span>
+<span class="dots">.  .  |  </span>sentencia  <span class="type">List&lt;Sentencia&gt;</span> = 
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">40:2  40:25  </span><span class="sourceText"></span><span class="posText">mensual = interes / 12.0</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>"mensual"  <span class="type">Ident.valor</span>                       <span class="pos">40:2  40:8   </span><span class="sourceText"></span><span class="posText">mensual</span><span class="sourceText"> = interes / 12.0;</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionAritmetica &rarr;                        <span class="pos">40:12  40:25 </span><span class="sourceText">mensual = </span><span class="posText">interes / 12.0</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  </span>"interes"  <span class="type">Ident.valor</span>                    <span class="pos">40:12  40:18 </span><span class="sourceText">mensual = </span><span class="posText">interes</span><span class="sourceText"> / 12.0;</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">/</span>"  
+<span class="dots">.  .  |  .  |  .  </span>"12.0"  <span class="type">LitReal.valor</span>                     <span class="pos">40:22  40:25 </span><span class="sourceText">mensual = interes / </span><span class="posText">12.0</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Return &rarr;                                        <span class="pos">41:9  41:83  </span><span class="sourceText">return </span><span class="posText">capital * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionAritmetica &rarr;                        <span class="pos">41:9  41:83  </span><span class="sourceText">return </span><span class="posText">capital * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  |  .  |  .  </span>ExpresionAritmetica &rarr;                     <span class="pos">41:9  41:25  </span><span class="sourceText">return </span><span class="posText">capital * mensual</span><span class="sourceText"> / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"capital"  <span class="type">Ident.valor</span>                 <span class="pos">41:9  41:15  </span><span class="sourceText">return </span><span class="posText">capital</span><span class="sourceText"> * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"<span class="value">*</span>"  
+<span class="dots">.  .  |  .  |  .  |  </span>"mensual"  <span class="type">Ident.valor</span>                 <span class="pos">41:19  41:25 </span><span class="sourceText">return capital * </span><span class="posText">mensual</span><span class="sourceText"> / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">/</span>"  
+<span class="dots">.  .  |  .  |  .  </span>ExpresionAritmetica &rarr;                     <span class="pos">41:30  41:83 </span><span class="sourceText">return capital * mensual / (</span><span class="posText">100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"100.0"  <span class="type">LitReal.valor</span>                 <span class="pos">41:30  41:34 </span><span class="sourceText">return capital * mensual / (</span><span class="posText">100.0</span><span class="sourceText"> * (1.0 - potencia(1.0 + mensual/100.0, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"<span class="value">*</span>"  
+<span class="dots">.  .  |  .  |  .  |  </span>ExpresionAritmetica &rarr;                  <span class="pos">41:39  41:83 </span><span class="sourceText">return capital * mensual / (100.0 * (</span><span class="posText">1.0 - potencia(1.0 + mensual/100.0, 0 - meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  </span>"1.0"  <span class="type">LitReal.valor</span>                <span class="pos">41:39  41:41 </span><span class="sourceText">return capital * mensual / (100.0 * (</span><span class="posText">1.0</span><span class="sourceText"> - potencia(1.0 + mensual/100.0, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  </span>"<span class="value">-</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  </span>ExpresionLlamada &rarr;                  <span class="pos">41:45  41:83 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - </span><span class="posText">potencia(1.0 + mensual/100.0, 0 - meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>"<span class="value">potencia</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  </span>expresion  <span class="type">List&lt;Expresion&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>ExpresionAritmetica &rarr;         <span class="pos">41:54  41:72 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(</span><span class="posText">1.0 + mensual/100.0</span><span class="sourceText">, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"1.0"  <span class="type">LitReal.valor</span>       <span class="pos">41:54  41:56 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(</span><span class="posText">1.0</span><span class="sourceText"> + mensual/100.0, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"<span class="value">+</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>ExpresionAritmetica &rarr;      <span class="pos">41:60  41:72 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(1.0 + </span><span class="posText">mensual/100.0</span><span class="sourceText">, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"mensual"  <span class="type">Ident.valor</span>  <span class="pos">41:60  41:66 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(1.0 + </span><span class="posText">mensual</span><span class="sourceText">/100.0, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"<span class="value">/</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  .  </span>"100.0"  <span class="type">LitReal.valor</span>  <span class="pos">41:68  41:72 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/</span><span class="posText">100.0</span><span class="sourceText">, 0 - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  </span>ExpresionAritmetica &rarr;         <span class="pos">41:75  41:83 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, </span><span class="posText">0 - meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"0"  <span class="type">LitEnt.valor</span>          <span class="pos">41:75  41:75 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, </span><span class="posText">0</span><span class="sourceText"> - meses)));</span>
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"<span class="value">-</span>"  
+<span class="dots">.  .  |  .  |  .  |  .  |  .  |  </span>"meses"  <span class="type">Ident.valor</span>       <span class="pos">41:79  41:83 </span><span class="sourceText">return capital * mensual / (100.0 * (1.0 - potencia(1.0 + mensual/100.0, 0 - </span><span class="posText">meses</span><span class="sourceText">)));</span>
+<span class="dots">.  .  </span>DefFuncion &rarr;                                          <span class="pos">45:1  59:59  </span><span class="sourceText"></span><span class="posText">main() {</span><span class="sourceText"> ... </span><span class="posText">print letraHipoteca(precioVivienda, mesesHipoteca, interes</span><span class="sourceText">);</span>
 <span class="dots">.  .  |  </span>"<span class="value">main</span>"  
 <span class="dots">.  .  |  </span>parametros  <span class="type">List&lt;Parametros&gt;</span> = 
 <span class="dots">.  .  |  </span><span class="null">null</span>  tipo:<span class="type">Tipo</span>
 <span class="dots">.  .  |  </span>defvariable  <span class="type">List&lt;DefVariable&gt;</span> = 
+<span class="dots">.  .  |  .  </span>DefVariable &rarr;                                   <span class="pos">46:6  46:19  </span><span class="sourceText">var </span><span class="posText">precioVivienda</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">precioVivienda</span>"  
+<span class="dots">.  .  |  .  |  </span>"<span class="value">local</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">-4</span>  <span class="type">int</span>
+<span class="dots">.  .  |  .  </span>DefVariable &rarr;                                   <span class="pos">47:6  47:18  </span><span class="sourceText">var </span><span class="posText">mesesHipoteca</span><span class="sourceText">:int;</span>
+<span class="dots">.  .  |  .  |  </span><span class="value">IntTipo</span> &rarr;                                    <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">mesesHipoteca</span>"  
+<span class="dots">.  .  |  .  |  </span>"<span class="value">local</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">-6</span>  <span class="type">int</span>
+<span class="dots">.  .  |  .  </span>DefVariable &rarr;                                   <span class="pos">48:6  48:12  </span><span class="sourceText">var </span><span class="posText">interes</span><span class="sourceText">:float;</span>
+<span class="dots">.  .  |  .  |  </span><span class="value">RealTipo</span> &rarr;                                   <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
+<span class="dots">.  .  |  .  |  </span>"<span class="value">interes</span>"  
+<span class="dots">.  .  |  .  |  </span>"<span class="value">local</span>"  
+<span class="dots">.  .  |  .  |  </span><span class="value">-10</span>  <span class="type">int</span>
 <span class="dots">.  .  |  </span>sentencia  <span class="type">List&lt;Sentencia&gt;</span> = 
-<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">26:2  26:9   </span><span class="sourceText"></span><span class="posText">a = 1111</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  |  </span>"a"  <span class="type">Ident.valor</span>                             <span class="pos">26:2  26:2   </span><span class="sourceText"></span><span class="posText">a</span><span class="sourceText"> = 1111;</span>
-<span class="dots">.  .  |  .  |  </span>"1111"  <span class="type">LitEnt.valor</span>                         <span class="pos">26:6  26:9   </span><span class="sourceText">a = </span><span class="posText">1111</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">27:2  27:11  </span><span class="sourceText"></span><span class="posText">b = 2222.2</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  |  </span>"b"  <span class="type">Ident.valor</span>                             <span class="pos">27:2  27:2   </span><span class="sourceText"></span><span class="posText">b</span><span class="sourceText"> = 2222.2;</span>
-<span class="dots">.  .  |  .  |  </span>"2222.2"  <span class="type">LitReal.valor</span>                      <span class="pos">27:6  27:11  </span><span class="sourceText">b = </span><span class="posText">2222.2</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">28:2  28:12  </span><span class="sourceText"></span><span class="posText">v[3] = 3333</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  |  </span>Array &rarr;                                      <span class="pos">28:2  28:4   </span><span class="sourceText"></span><span class="posText">v[3</span><span class="sourceText">] = 3333;</span>
-<span class="dots">.  .  |  .  |  .  </span>"v"  <span class="type">Ident.valor</span>                          <span class="pos">28:2  28:2   </span><span class="sourceText"></span><span class="posText">v</span><span class="sourceText">[3] = 3333;</span>
-<span class="dots">.  .  |  .  |  .  </span>"3"  <span class="type">LitEnt.valor</span>                         <span class="pos">28:4  28:4   </span><span class="sourceText">v[</span><span class="posText">3</span><span class="sourceText">] = 3333;</span>
-<span class="dots">.  .  |  .  |  </span>"3333"  <span class="type">LitEnt.valor</span>                         <span class="pos">28:9  28:12  </span><span class="sourceText">v[3] = </span><span class="posText">3333</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">29:2  29:13  </span><span class="sourceText"></span><span class="posText">p.y = 4444.4</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  |  </span>Struct &rarr;                                     <span class="pos">29:2  29:4   </span><span class="sourceText"></span><span class="posText">p.y</span><span class="sourceText"> = 4444.4;</span>
-<span class="dots">.  .  |  .  |  .  </span>"p"  <span class="type">Ident.valor</span>                          <span class="pos">29:2  29:2   </span><span class="sourceText"></span><span class="posText">p</span><span class="sourceText">.y = 4444.4;</span>
-<span class="dots">.  .  |  .  |  .  </span>"<span class="value">y</span>"  
-<span class="dots">.  .  |  .  |  </span>"4444.4"  <span class="type">LitReal.valor</span>                      <span class="pos">29:8  29:13  </span><span class="sourceText">p.y = </span><span class="posText">4444.4</span><span class="sourceText">;</span>
-<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">31:10  31:10 </span><span class="sourceText">printsp </span><span class="posText">a</span><span class="sourceText">;		    // 1111</span>
-<span class="dots">.  .  |  .  |  </span>"a"  <span class="type">Ident.valor</span>                             <span class="pos">31:10  31:10 </span><span class="sourceText">printsp </span><span class="posText">a</span><span class="sourceText">;		    // 1111</span>
-<span class="dots">.  .  |  .  |  </span>"<span class="value">sp</span>"  
-<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">32:10  32:16 </span><span class="sourceText">printsp </span><span class="posText">b + p.y</span><span class="sourceText">;	// 6666.6</span>
-<span class="dots">.  .  |  .  |  </span>ExpresionAritmetica &rarr;                        <span class="pos">32:10  32:16 </span><span class="sourceText">printsp </span><span class="posText">b + p.y</span><span class="sourceText">;	// 6666.6</span>
-<span class="dots">.  .  |  .  |  .  </span>"b"  <span class="type">Ident.valor</span>                          <span class="pos">32:10  32:10 </span><span class="sourceText">printsp </span><span class="posText">b</span><span class="sourceText"> + p.y;	// 6666.6</span>
-<span class="dots">.  .  |  .  |  .  </span>"<span class="value">+</span>"  
-<span class="dots">.  .  |  .  |  .  </span>Struct &rarr;                                  <span class="pos">32:14  32:16 </span><span class="sourceText">printsp b + </span><span class="posText">p.y</span><span class="sourceText">;	// 6666.6</span>
-<span class="dots">.  .  |  .  |  .  |  </span>"p"  <span class="type">Ident.valor</span>                       <span class="pos">32:14  32:14 </span><span class="sourceText">printsp b + </span><span class="posText">p</span><span class="sourceText">.y;	// 6666.6</span>
-<span class="dots">.  .  |  .  |  .  |  </span>"<span class="value">y</span>"  
-<span class="dots">.  .  |  .  |  </span>"<span class="value">sp</span>"  
-<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">33:10  33:12 </span><span class="sourceText">println </span><span class="posText">v[3</span><span class="sourceText">];		// 3333</span>
-<span class="dots">.  .  |  .  |  </span>Array &rarr;                                      <span class="pos">33:10  33:12 </span><span class="sourceText">println </span><span class="posText">v[3</span><span class="sourceText">];		// 3333</span>
-<span class="dots">.  .  |  .  |  .  </span>"v"  <span class="type">Ident.valor</span>                          <span class="pos">33:10  33:10 </span><span class="sourceText">println </span><span class="posText">v</span><span class="sourceText">[3];		// 3333</span>
-<span class="dots">.  .  |  .  |  .  </span>"3"  <span class="type">LitEnt.valor</span>                         <span class="pos">33:12  33:12 </span><span class="sourceText">println v[</span><span class="posText">3</span><span class="sourceText">];		// 3333</span>
-<span class="dots">.  .  |  .  |  </span>"<span class="value">ln</span>"  
-<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">35:8  35:26  </span><span class="sourceText">print </span><span class="posText">a > 0 && b < 3333.3</span><span class="sourceText">;	// 1</span>
-<span class="dots">.  .  |  .  |  </span>ExpresionLogica &rarr;                            <span class="pos">35:8  35:12  </span><span class="sourceText">print </span><span class="posText">a > 0</span><span class="sourceText"> && b < 3333.3;	// 1</span>
-<span class="dots">.  .  |  .  |  .  </span>"a"  <span class="type">Ident.valor</span>                          <span class="pos">35:8  35:8   </span><span class="sourceText">print </span><span class="posText">a</span><span class="sourceText"> > 0 && b < 3333.3;	// 1</span>
-<span class="dots">.  .  |  .  |  .  </span>"<span class="value">></span>"  
-<span class="dots">.  .  |  .  |  .  </span>"0"  <span class="type">LitEnt.valor</span>                         <span class="pos">35:12  35:12 </span><span class="sourceText">print a > </span><span class="posText">0</span><span class="sourceText"> && b < 3333.3;	// 1</span>
-<span class="dots">.  .  |  .  |  </span>ExpresionLogica &rarr;                            <span class="pos">35:17  35:26 </span><span class="sourceText">print a > 0 && </span><span class="posText">b < 3333.3</span><span class="sourceText">;	// 1</span>
-<span class="dots">.  .  |  .  |  .  </span>"b"  <span class="type">Ident.valor</span>                          <span class="pos">35:17  35:17 </span><span class="sourceText">print a > 0 && </span><span class="posText">b</span><span class="sourceText"> < 3333.3;	// 1</span>
-<span class="dots">.  .  |  .  |  .  </span>"<span class="value"><</span>"  
-<span class="dots">.  .  |  .  |  .  </span>"3333.3"  <span class="type">LitReal.valor</span>                   <span class="pos">35:21  35:26 </span><span class="sourceText">print a > 0 && b < </span><span class="posText">3333.3</span><span class="sourceText">;	// 1</span>
-<span class="dots">.  .  |  .  |  </span>"<span class="value"></span>"  
-<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">36:14  36:14 </span><span class="sourceText">print <int>(</span><span class="posText">b</span><span class="sourceText">);			// 2222</span>
-<span class="dots">.  .  |  .  |  </span>Cast &rarr;                                       <span class="pos">36:14  36:14 </span><span class="sourceText">print <int>(</span><span class="posText">b</span><span class="sourceText">);			// 2222</span>
-<span class="dots">.  .  |  .  |  .  </span><span class="value">IntTipo</span> &rarr;                                 <span class="pos"><span class="null">null</span>  <span class="null">null</span>   </span>
-<span class="dots">.  .  |  .  |  .  </span>"b"  <span class="type">Ident.valor</span>                          <span class="pos">36:14  36:14 </span><span class="sourceText">print <int>(</span><span class="posText">b</span><span class="sourceText">);			// 2222</span>
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">55:2  55:26  </span><span class="sourceText"></span><span class="posText">precioVivienda = 200000.0</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>"precioVivienda"  <span class="type">Ident.valor</span>                <span class="pos">55:2  55:15  </span><span class="sourceText"></span><span class="posText">precioVivienda</span><span class="sourceText"> = 200000.0;</span>
+<span class="dots">.  .  |  .  |  </span>"200000.0"  <span class="type">LitReal.valor</span>                    <span class="pos">55:19  55:26 </span><span class="sourceText">precioVivienda = </span><span class="posText">200000.0</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">56:2  56:24  </span><span class="sourceText"></span><span class="posText">mesesHipoteca = 30 * 12</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  </span>"mesesHipoteca"  <span class="type">Ident.valor</span>                 <span class="pos">56:2  56:14  </span><span class="sourceText"></span><span class="posText">mesesHipoteca</span><span class="sourceText"> = 30 * 12;</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionAritmetica &rarr;                        <span class="pos">56:18  56:24 </span><span class="sourceText">mesesHipoteca = </span><span class="posText">30 * 12</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  |  .  </span>"30"  <span class="type">LitEnt.valor</span>                        <span class="pos">56:18  56:19 </span><span class="sourceText">mesesHipoteca = </span><span class="posText">30</span><span class="sourceText"> * 12;</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">*</span>"  
+<span class="dots">.  .  |  .  |  .  </span>"12"  <span class="type">LitEnt.valor</span>                        <span class="pos">56:23  56:24 </span><span class="sourceText">mesesHipoteca = 30 * </span><span class="posText">12</span><span class="sourceText">;</span>
+<span class="dots">.  .  |  .  </span>Asignacion &rarr;                                    <span class="pos">57:2  57:15  </span><span class="sourceText"></span><span class="posText">interes = 2.04</span><span class="sourceText">;	</span>
+<span class="dots">.  .  |  .  |  </span>"interes"  <span class="type">Ident.valor</span>                       <span class="pos">57:2  57:8   </span><span class="sourceText"></span><span class="posText">interes</span><span class="sourceText"> = 2.04;	</span>
+<span class="dots">.  .  |  .  |  </span>"2.04"  <span class="type">LitReal.valor</span>                        <span class="pos">57:12  57:15 </span><span class="sourceText">interes = </span><span class="posText">2.04</span><span class="sourceText">;	</span>
+<span class="dots">.  .  |  .  </span>Print &rarr;                                         <span class="pos">59:8  59:59  </span><span class="sourceText">print </span><span class="posText">letraHipoteca(precioVivienda, mesesHipoteca, interes</span><span class="sourceText">);</span>
+<span class="dots">.  .  |  .  |  </span>ExpresionLlamada &rarr;                           <span class="pos">59:8  59:59  </span><span class="sourceText">print </span><span class="posText">letraHipoteca(precioVivienda, mesesHipoteca, interes</span><span class="sourceText">);</span>
+<span class="dots">.  .  |  .  |  .  </span>"<span class="value">letraHipoteca</span>"  
+<span class="dots">.  .  |  .  |  .  </span>expresion  <span class="type">List&lt;Expresion&gt;</span> = 
+<span class="dots">.  .  |  .  |  .  |  </span>"precioVivienda"  <span class="type">Ident.valor</span>          <span class="pos">59:22  59:35 </span><span class="sourceText">print letraHipoteca(</span><span class="posText">precioVivienda</span><span class="sourceText">, mesesHipoteca, interes);</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"mesesHipoteca"  <span class="type">Ident.valor</span>           <span class="pos">59:38  59:50 </span><span class="sourceText">print letraHipoteca(precioVivienda, </span><span class="posText">mesesHipoteca</span><span class="sourceText">, interes);</span>
+<span class="dots">.  .  |  .  |  .  |  </span>"interes"  <span class="type">Ident.valor</span>                 <span class="pos">59:53  59:59 </span><span class="sourceText">print letraHipoteca(precioVivienda, mesesHipoteca, </span><span class="posText">interes</span><span class="sourceText">);</span>
 <span class="dots">.  .  |  .  |  </span>"<span class="value"></span>"  
 
 [ASTPrinter] --------------------------------

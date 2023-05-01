@@ -24,7 +24,9 @@ import ast.ExpresionDistinto;
 import ast.ExpresionLlamada;
 import ast.ExpresionLogica;
 import ast.ExpresionLogicaAndOr;
+import ast.FuncionLlamada;
 import ast.Ident;
+import ast.If;
 import ast.LitChar;
 import ast.LitEnt;
 import ast.LitReal;
@@ -32,11 +34,14 @@ import ast.Parametros;
 import ast.Position;
 import ast.Print;
 import ast.Program;
+import ast.Read;
+import ast.Return;
 import ast.Sentencia;
 import ast.Struct;
 import ast.StructTipo;
 import ast.Variable;
 import ast.VariableStruct;
+import ast.While;
 import visitor.DefaultVisitor;
 
 public class CodeSelection extends DefaultVisitor {
@@ -90,8 +95,8 @@ public class CodeSelection extends DefaultVisitor {
 	// class Program { List<Definicion> definicion; }
 	public Object visit(Program node, Object param) {
 		out("#source \"" + sourceFile + "\"");
-//		out("call main");
-//		out("halt");
+		out("call main");
+		out("halt");
 		visitChildren(node.getDefinicion(), param);
 		return null;
 	}
@@ -142,7 +147,7 @@ public class CodeSelection extends DefaultVisitor {
 		}
 
 		// Como en teoría -> ret bytesReturn, bytesLocals, bytesParams
-		if (node.getTipo() != null) {
+		if (node.getTipo() == null) {
 			out("ret 0, " + sizeLocales + ", " + sizeParametros);
 		}
 
@@ -182,6 +187,106 @@ public class CodeSelection extends DefaultVisitor {
 			// " "
 			out("pushb 32");
 			out("outb");
+		}
+
+		return null;
+	}
+
+	// class Read { Expresion read; }
+	public Object visit(Read node, Object param) {
+		out("#line " + node.getEnd().getLine());
+		node.getRead().accept(this, Funcion.DIRECCION);
+		out("in" + node.getRead().getTipo().getSufijo());
+		out("store" + node.getRead().getTipo().getSufijo());
+
+		return null;
+	}
+
+	// class FuncionLlamada { String nombre; List<Expresion> expresion; }
+	public Object visit(FuncionLlamada node, Object param) {
+		out("#line " + node.getStart().getLine());
+		if (node.getExpresion() != null) {
+			visitChildren(node.getExpresion(), Funcion.VALOR);
+		}
+
+		out("call " + node.getNombre());
+
+		if (node.getDefinicion().getTipo() != null) {
+			out("pop");
+		}
+
+		return null;
+	}
+
+	// class If { Expresion condicion; List<Sentencia> if_true; List<Sentencia>
+	// if_false; }
+	public Object visit(If node, Object param) {
+		out("#line " + node.getStart().getLine());
+		int ifCont = this.ifCont;
+		this.ifCont++;
+
+		node.getCondicion().accept(this, Funcion.VALOR);
+
+		if (node.getIf_false() != null) {
+			out("jz else" + ifCont);
+		} else {
+			out("jz finif" + ifCont);
+		}
+
+		for (int i = 0; i < node.getIf_true().size(); i++) {
+			node.getIf_true().get(i).accept(this, param);
+			if (i == node.getIf_true().size() - 1 && !(node.getIf_true().get(i) instanceof Return)) {
+				out("jmp finif" + ifCont);
+			}
+		}
+
+		if (node.getIf_false() != null) {
+			out("else" + ifCont + ":");
+			for (Sentencia child : node.getIf_false()) {
+				child.accept(this, param);
+			}
+		}
+
+		out("finif" + ifCont + ":");
+
+		return null;
+	}
+
+	// class While { Expresion condicion; List<Sentencia> sentencia; }
+	public Object visit(While node, Object param) {
+		out("#line " + node.getStart().getLine());
+		int whileCont = this.whileCont;
+		this.whileCont++;
+
+		out("while" + whileCont + ":");
+		node.getCondicion().accept(this, Funcion.VALOR);
+
+		out("jz finWhile" + whileCont);
+		visitChildren(node.getSentencia(), param);
+
+		out("jmp while" + whileCont);
+		out("finWhile" + whileCont + ":");
+
+		return null;
+	}
+
+	// class Return { Expresion retorno; }
+	public Object visit(Return node, Object param) {
+		int sizeLocales = 0;
+		int sizeParams = 0;
+
+		for (Parametros child : node.getFunction().getParametros()) {
+			sizeParams += child.getTipo().getSize();
+		}
+		for (DefVariable child : node.getFunction().getDefvariable()) {
+			sizeLocales += child.getTipo().getSize();
+		}
+
+		if (node.getRetorno() == null) {
+			out("ret 0," + sizeLocales + "," + sizeParams);
+		} else {
+			node.getRetorno().accept(this, Funcion.VALOR);
+			out("ret " + node.getRetorno().getTipo().getSize() + "," + sizeLocales + "," + sizeParams);
 		}
 
 		return null;

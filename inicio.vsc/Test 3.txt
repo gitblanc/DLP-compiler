@@ -1,17 +1,17 @@
 /*
-Test 3 para probar la Fase de Generación de Código
+Test 3 para probar la Fase de Generaciï¿½n de Cï¿½digo
 
-COMPROBACION. Al ejecutar el programa deberá salir:
+COMPROBACION. Al ejecutar el programa deberï¿½ salir:
 A
 1.5
 1.49
 1.48
 
-CONSEJO: No limitarse a comprobar el resultado de la ejecución. Se recomienda además abrir el fichero generado usando el depurador GVM y comprobar sus instrucciones.
+CONSEJO: No limitarse a comprobar el resultado de la ejecuciï¿½n. Se recomienda ademï¿½s abrir el fichero generado usando el depurador GVM y comprobar sus instrucciones.
 
 Para facilitar esta tarea es de gran utilidad que el alumno haya generado directivas '#line' en el fichero de salida.
-Para información sobre la función de dicha directiva se debe abrir con GVM el siguiente tutorial: 
-Tutorial\3 Uso básico del depurador\4 Fusión Alto Nivel.txt
+Para informaciï¿½n sobre la funciï¿½n de dicha directiva se debe abrir con GVM el siguiente tutorial: 
+Tutorial\3 Uso bï¿½sico del depurador\4 Fusiï¿½n Alto Nivel.txt
 
 NOTA: Es posible que el alumno deba adaptar ligeramente la sintaxis de este ejemplo si no coincide
 con la del lenguaje que le corresponde.
@@ -48,10 +48,10 @@ imprimeElMejor() {
 		i = i + 1;
 	}  
 
-	print F1[mejorPiloto].inicial;
+	println F1[mejorPiloto].inicial;
 	i = 0;
 	while (i < 3) {
-		print F1[mejorPiloto].crono[i];
+		println F1[mejorPiloto].crono[i];
 		i = i + 1;
 	}  
 }

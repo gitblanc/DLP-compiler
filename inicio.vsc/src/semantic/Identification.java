@@ -34,11 +34,7 @@ public class Identification extends DefaultVisitor {
 	public Object visit(DefFuncion node, Object param) {
 		variables.set();
 
-		if (node.getTipo() != null)// cuando de un nullPointer es pq desde el grammar.g4 le paso un null
-			node.getTipo().accept(this, param); // No es necesario realmente
-
-		DefFuncion definicion = funciones.get(node.getNombre());
-		predicado(definicion == null, "Función ya definida: " + node.getNombre(), node);
+		predicado(funciones.get(node.getNombre()) == null, "Función ya definida: " + node.getNombre(), node);
 		funciones.put(node.getNombre(), node);
 
 		visitChildren(node.getParametros(), param);
@@ -58,6 +54,7 @@ public class Identification extends DefaultVisitor {
 		DefFuncion definicion = funciones.get(node.getNombre());
 		predicado(definicion != null, "Función no definida: " + node.getNombre(), node);
 		node.setDefinicion(definicion); // Enlazar referencia con definición
+		visitChildren(node.getExpresion(), param);
 		return null;
 	}
 
@@ -111,7 +108,7 @@ public class Identification extends DefaultVisitor {
 
 	public Object visit(Parametros node, Object param) {
 		DefVariable definicion = new DefVariable(node.getTipo(), node.getNombre(), "param");
-		definicion.setPositions(node);
+		definicion.setParam(node);
 		predicado(variables.getFromTop(node.getNombre()) == null, "Parámetro repetido: " + node.getNombre(), node);
 
 		variables.put(node.getNombre(), definicion);
@@ -120,7 +117,7 @@ public class Identification extends DefaultVisitor {
 			node.getTipo().accept(this, param);
 		return null;
 	}
-	
+
 	public Object visit(Ident node, Object param) {
 		predicado(variables.getFromAny(node.getValor()) != null, "Variable no definida: " + node.getValor(), node);
 		node.setDefinicion((DefVariable) variables.getFromAny(node.getValor()));

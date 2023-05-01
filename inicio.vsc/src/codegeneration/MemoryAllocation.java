@@ -24,6 +24,7 @@ public class MemoryAllocation extends DefaultVisitor {
 				((DefVariable) child).setAddress(currentAddress);
 				currentAddress += ((DefVariable) child).getTipo().getSize();
 			}
+			child.accept(this, param);
 		}
 		return null;
 	}

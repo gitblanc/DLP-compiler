@@ -52,8 +52,8 @@ import visitor.ASTPrinter;
  * Generación de Código: 'MemoryAllocation.java' y 'CodeSelection.java'.
  */
 public class Main {
-	public static final String INPUT_FILE = "codegenerationBasic.txt"; // Fichero de prueba durante
-																							// el
+	public static final String INPUT_FILE = "Test 4.txt"; // Fichero de prueba durante
+															// el
 	// desarrollo
 	public static final String OUTPUT_FILE = "output.txt";
 

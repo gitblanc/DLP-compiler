@@ -13,13 +13,17 @@ definiciones returns[List<Definicion> lista = new ArrayList<Definicion>()]
 	: (definicion { $lista.add($definicion.ast);})*;
 
 definicion returns[Definicion ast]
-	: defVariable { $ast = $defVariable.ast; }
+	: defVariable { $defVariable.ast.setAmbito("global"); $ast = $defVariable.ast; }
 	| 'struct' IDENT '{' campos '}' ';' { $ast = new DefStruct($IDENT, $campos.lista); }
 	| funcion { $ast = $funcion.ast; }
 	;
+	
+variables returns[List<DefVariable> lista = new ArrayList<DefVariable>()]
+	: (defVariable { $defVariable.ast.setAmbito("local"); $lista.add($defVariable.ast); })*
+	;
 
 defVariable returns[DefVariable ast]
-	: 'var' IDENT ':' tipo ';' { $ast = new DefVariable($tipo.ast, $IDENT); }
+	: 'var' IDENT ':' tipo ';' { $ast = new DefVariable($tipo.ast, $IDENT, ""); }
 	;
 
 campos returns[List<VariableStruct> lista = new ArrayList<VariableStruct>()]
@@ -31,12 +35,8 @@ campo returns[VariableStruct ast]
 	;
 
 funcion returns[DefFuncion ast]
-	: IDENT '(' parametros ')' ':' tipo '{' variables sentencias '}' { $ast = new DefFuncion($IDENT, $parametros.lista, $tipo.ast, $variables.lista, $sentencias.lista); }
-	| IDENT '(' parametros ')' '{' variables sentencias '}' { $ast = new DefFuncion($IDENT, $parametros.lista, null, $variables.lista, $sentencias.lista); }
-	;
-	
-variables returns[List<DefVariable> lista = new ArrayList<DefVariable>()]
-	: (defVariable { $lista.add($defVariable.ast); })*
+	: IDENT '(' parametros ')' '{' variables sentencias '}' { $ast = new DefFuncion($IDENT, $parametros.lista, null, $variables.lista, $sentencias.lista); }
+	| IDENT '(' parametros ')' ':' tipo '{' variables sentencias '}' { $ast = new DefFuncion($IDENT, $parametros.lista, $tipo.ast, $variables.lista, $sentencias.lista); }
 	;
 	
 sentencias returns[List<Sentencia> lista = new ArrayList<Sentencia>()]
@@ -79,11 +79,13 @@ expresion returns[Expresion ast]
 	| '<' tipo '>' '(' expresion ')' { $ast = new Cast($tipo.ast, $expresion.ast); }
 	| expresion '[' expresion ']' { $ast = new Array($ctx.expresion(0), $ctx.expresion(1)); }
 	| expresion '.' IDENT { $ast = new Struct($ctx.expresion(0), $IDENT); }
-	| '!' expresion { $ast = new ExpresionDistinto($expresion.ast); }
-	| expresion op=('*'|'/'|'%'|'+'|'-') expresion { $ast = new ExpresionAritmetica($ctx.expresion(0), $op, $ctx.expresion(1)); }
-	| expresion op=('>'|'<'|'>='|'<='|'=='|'!=') expresion { $ast = new ExpresionLogica($ctx.expresion(0), $op, $ctx.expresion(1)); }
+	| expresion op=('*'|'/'|'%') expresion { $ast = new ExpresionAritmetica($ctx.expresion(0), $op, $ctx.expresion(1)); }
+	| expresion op=('+'|'-') expresion { $ast = new ExpresionAritmetica($ctx.expresion(0), $op, $ctx.expresion(1)); }
+	| expresion op=('<'|'>'|'<='|'>=') expresion { $ast = new ExpresionLogica($ctx.expresion(0), $op, $ctx.expresion(1)); }
+	| expresion op=('!='|'==') expresion { $ast = new ExpresionLogica($ctx.expresion(0), $op, $ctx.expresion(1)); }
 	| expresion '&&' expresion { $ast = new ExpresionLogicaAndOr($ctx.expresion(0), "&&", $ctx.expresion(1));}
 	| expresion '||' expresion { $ast = new ExpresionLogicaAndOr($ctx.expresion(0), "||", $ctx.expresion(1));}
+	| '!' expresion { $ast = new ExpresionDistinto($expresion.ast); }
 	;
 
 

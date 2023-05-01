@@ -1,77 +1,185 @@
-#source "codegenerationBasic.txt"
-#GLOBAL a:int
-#GLOBAL b:float
-#TYPE Punto:{
-x:float
-y:float
-}
-#GLOBAL v:5*int
-#GLOBAL p:Punto
-#line 25
-main:
-enter 0
-#line 26
-pusha 0
-pushi 1111
-storei
-#line 27
-pusha 2
-pushf 2222.2
-storef
-#line 28
-pusha 6
-push 2
-pushi 3
-mul
+#source "Test 4.txt"
+call main
+halt
+#line 17
+potencia:
+enter 4
+#line 20
+pusha BP
+push 4
 add
-pushi 3333
-storei
-#line 29
-pusha 16
-push 0
-add
-pushf 4444.4
-storef
-#line 31
-pusha 0
-loadi
-outi
-pushb 32
-outb
-#line 32
-pusha 2
-loadf
-pusha 16
-push 0
-add
-loadf
-addf
-outf
-pushb 32
-outb
-#line 33
-pusha 6
-push 2
-pushi 3
-mul
-add
-loadi
-outi
-pushb 10
-outb
-#line 35
-pusha 0
 loadi
 pushi 0
+eqi
+jz else0
+#line 21
+pusha BP
+push -4
+add
+pushf 1.0
+storef
+jmp finif0
+else0:
+#line 23
+pusha BP
+push 4
+add
+loadi
+pushi 0
+lti
+jz else1
+#line 24
+pusha BP
+push -4
+add
+pushf 1.0
+pusha BP
+push 6
+add
+loadf
+pushi 0
+pusha BP
+push 4
+add
+loadi
+subi
+call potencia
+divf
+storef
+jmp finif1
+else1:
+#line 26
+pusha BP
+push -4
+add
+pusha BP
+push 6
+add
+loadf
+storef
+#line 27
+while0:
+pusha BP
+push 4
+add
+loadi
+pushi 1
 gti
-pusha 2
+jz finWhile0
+#line 28
+pusha BP
+push -4
+add
+pusha BP
+push -4
+add
 loadf
-pushf 3333.3
-ltf
-and
-outi
-#line 36
-pusha 2
+pusha BP
+push 6
+add
 loadf
-f2i
-outi
+mulf
+storef
+#line 29
+pusha BP
+push 4
+add
+pusha BP
+push 4
+add
+loadi
+pushi 1
+subi
+storei
+jmp while0
+finWhile0:
+finif1:
+finif0:
+pusha BP
+push -4
+add
+loadf
+ret 4,4,6
+#line 37
+letraHipoteca:
+enter 4
+#line 40
+pusha BP
+push -4
+add
+pusha BP
+push 4
+add
+loadf
+pushf 12.0
+divf
+storef
+pusha BP
+push 10
+add
+loadf
+pusha BP
+push -4
+add
+loadf
+mulf
+pushf 100.0
+pushf 1.0
+pushf 1.0
+pusha BP
+push -4
+add
+loadf
+pushf 100.0
+divf
+addf
+pushi 0
+pusha BP
+push 8
+add
+loadi
+subi
+call potencia
+subf
+mulf
+divf
+ret 4,4,10
+#line 45
+main:
+enter 10
+#line 55
+pusha BP
+push -4
+add
+pushf 200000.0
+storef
+#line 56
+pusha BP
+push -6
+add
+pushi 30
+pushi 12
+muli
+storei
+#line 57
+pusha BP
+push -10
+add
+pushf 2.04
+storef
+#line 59
+pusha BP
+push -4
+add
+loadf
+pusha BP
+push -6
+add
+loadi
+pusha BP
+push -10
+add
+loadf
+call letraHipoteca
+outf
+ret 0, 10, 0
