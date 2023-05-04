@@ -371,8 +371,8 @@ public class MyVisitorImplementation extends DefaultVisitor {
 
 		// super.visit(node, param);
 		System.out.println(" ! ");
-		if (node.getNot() != null)
-			node.getNot().accept(this, param);
+		if (node.getHijoNot() != null)
+			node.getHijoNot().accept(this, param);
 
 		return null;
 	}

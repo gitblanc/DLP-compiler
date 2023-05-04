@@ -161,8 +161,8 @@ public class DefaultVisitor implements Visitor {
 
 	// class ExpresionDistinto { Expresion not; }
 	public Object visit(ExpresionDistinto node, Object param) {
-		if (node.getNot() != null)
-			node.getNot().accept(this, param);
+		if (node.getHijoNot() != null)
+			node.getHijoNot().accept(this, param);
 		return null;
 	}
 

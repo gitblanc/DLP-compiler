@@ -1,4 +1,6 @@
-/codegeneration/
 /main/
 /semantic/
-/parser/
+/ast/
+/codegeneration/
+/recorreArbol/
+/visitor/

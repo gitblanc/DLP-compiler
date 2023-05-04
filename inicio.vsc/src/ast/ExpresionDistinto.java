@@ -11,7 +11,7 @@ import visitor.Visitor;
 public class ExpresionDistinto extends AbstractExpresion {
 
 	public ExpresionDistinto(Expresion not) {
-		this.not = not;
+		this.hijoNot = not;
 
        // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
        // Obtiene la linea/columna a partir de las de los hijos.
@@ -19,18 +19,18 @@ public class ExpresionDistinto extends AbstractExpresion {
 	}
 
 	public ExpresionDistinto(Object not) {
-		this.not = (Expresion) getAST(not);
+		this.hijoNot = (Expresion) getAST(not);
 
        // Lo siguiente se puede borrar si no se quiere la posicion en el fichero.
        // Obtiene la linea/columna a partir de las de los hijos.
        setPositions(not);
 	}
 
-	public Expresion getNot() {
-		return not;
+	public Expresion getHijoNot() {
+		return hijoNot;
 	}
 	public void setNot(Expresion not) {
-		this.not = not;
+		this.hijoNot = not;
 	}
 
 	@Override
@@ -38,9 +38,9 @@ public class ExpresionDistinto extends AbstractExpresion {
 		return v.visit(this, param);
 	}
 
-	private Expresion not;
+	private Expresion hijoNot;
 
 	public String toString() {
-       return "{not:" + getNot() + "}";
+       return "{hijoNot:" + getHijoNot() + "}";
    }
 }

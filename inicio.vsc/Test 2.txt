@@ -54,7 +54,7 @@ imprime():int {
 	var aux:Persona;
 
 	i = 0;
-	while (!(i >= 4)) {
+	while (! (i >= 4)) {
 		aux.inicial = empresa[i].inicial;
 		aux.sueldo = empresa[i].sueldo;
 		

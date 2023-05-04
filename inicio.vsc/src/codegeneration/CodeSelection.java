@@ -324,8 +324,8 @@ public class CodeSelection extends DefaultVisitor {
 
 	// class ExpresionDistinto { Expresion not; }
 	public Object visit(ExpresionDistinto node, Object param) {
-		if (node.getNot() != null) {
-			node.getNot().accept(this, Funcion.VALOR);
+		if (node.getHijoNot() != null) {
+			node.getHijoNot().accept(this, Funcion.VALOR);
 		}
 		out("not");
 

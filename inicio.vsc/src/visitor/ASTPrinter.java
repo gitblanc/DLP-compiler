@@ -318,7 +318,7 @@ public class ASTPrinter extends DefaultVisitor {
 
 		printName(indent, "ExpresionDistinto", node, false);
 
-		visit(indent + 1, "not", "Expresion",node.getNot());
+		visit(indent + 1, "not", "Expresion",node.getHijoNot());
 		return null;
 	}
 

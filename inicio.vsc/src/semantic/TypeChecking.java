@@ -231,10 +231,10 @@ public class TypeChecking extends DefaultVisitor {
 
 //	class ExpresionDistinto { Expresion not; }
 	public Object visit(ExpresionDistinto node, Object params) {
-		if (node.getNot() != null)
-			node.getNot().accept(this, params);
+		if (node.getHijoNot() != null)
+			node.getHijoNot().accept(this, params);
 
-		predicado(node.getTipo() instanceof IntTipo, "Error: la expresion debe ser de tipo entero", node);
+		predicado(node.getHijoNot().getTipo() instanceof IntTipo, "Error: la expresion debe ser de tipo entero", node);
 
 		node.setTipo(new IntTipo());
 		node.setModificable(false);

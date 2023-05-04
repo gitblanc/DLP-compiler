@@ -1,185 +1,238 @@
-#source "Test 4.txt"
+#source "Test 2.txt"
 call main
 halt
-#line 17
-potencia:
-enter 4
-#line 20
+#TYPE Persona:{
+inicial:byte
+sueldo:float
+}
+#GLOBAL empresa:4*Persona
+#line 33
+inicia:
+enter 2
+#line 36
 pusha BP
-push 4
+push -2
+add
+pushi 0
+storei
+#line 37
+while0:
+pusha BP
+push -2
 add
 loadi
-pushi 0
-eqi
-jz else0
-#line 21
+pushi 4
+lti
+jz finWhile0
+#line 38
+pusha 0
+push 5
 pusha BP
-push -4
+push -2
 add
-pushf 1.0
+loadi
+mul
+add
+push 0
+add
+pusha BP
+push -2
+add
+loadi
+pushb 65
+b2i
+addi
+i2b
+storeb
+#line 39
+pusha 0
+push 5
+pusha BP
+push -2
+add
+loadi
+mul
+add
+push 1
+add
+pushi 1000
+pusha BP
+push -2
+add
+loadi
+pushi 100
+muli
+addi
+i2f
 storef
-jmp finif0
-else0:
-#line 23
+#line 40
+pusha BP
+push -2
+add
+pusha BP
+push -2
+add
+loadi
+pushi 1
+addi
+storei
+jmp while0
+finWhile0:
+ret 0, 2, 0
+#line 44
+busca:
+enter 0
+#line 45
 pusha BP
 push 4
 add
 loadi
 pushi 0
 lti
-jz else1
-#line 24
-pusha BP
-push -4
-add
-pushf 1.0
-pusha BP
-push 6
-add
-loadf
-pushi 0
 pusha BP
 push 4
 add
 loadi
-subi
-call potencia
-divf
-storef
-jmp finif1
-else1:
-#line 26
-pusha BP
-push -4
-add
-pusha BP
-push 6
-add
-loadf
-storef
-#line 27
-while0:
-pusha BP
-push 4
-add
-loadi
-pushi 1
-gti
-jz finWhile0
-#line 28
-pusha BP
-push -4
-add
-pusha BP
-push -4
-add
-loadf
-pusha BP
-push 6
-add
-loadf
-mulf
-storef
-#line 29
-pusha BP
-push 4
-add
-pusha BP
-push 4
-add
-loadi
-pushi 1
-subi
-storei
-jmp while0
-finWhile0:
-finif1:
+pushi 4
+gei
+or
+jz finif0
+ret 0,0,2
 finif0:
-pusha BP
-push -4
-add
-loadf
-ret 4,4,6
-#line 37
-letraHipoteca:
-enter 4
-#line 40
-pusha BP
-push -4
-add
+#line 48
+pusha 0
+push 5
 pusha BP
 push 4
 add
-loadf
-pushf 12.0
-divf
-storef
-pusha BP
-push 10
+loadi
+mul
 add
-loadf
-pusha BP
-push -4
+push 0
 add
-loadf
-mulf
-pushf 100.0
-pushf 1.0
-pushf 1.0
+loadb
+outb
+#line 49
+pusha 0
+push 5
 pusha BP
-push -4
-add
-loadf
-pushf 100.0
-divf
-addf
-pushi 0
-pusha BP
-push 8
+push 4
 add
 loadi
-subi
-call potencia
-subf
-mulf
-divf
-ret 4,4,10
-#line 45
-main:
-enter 10
-#line 55
-pusha BP
-push -4
+mul
 add
-pushf 200000.0
-storef
+push 1
+add
+loadf
+outf
+ret 0, 0, 2
+#line 52
+imprime:
+enter 7
 #line 56
 pusha BP
-push -6
+push -2
 add
-pushi 30
-pushi 12
-muli
+pushi 0
 storei
 #line 57
+while1:
 pusha BP
-push -10
-add
-pushf 2.04
-storef
-#line 59
-pusha BP
-push -4
-add
-loadf
-pusha BP
-push -6
+push -2
 add
 loadi
+pushi 4
+gei
+not
+jz finWhile1
+#line 58
 pusha BP
-push -10
+push -7
+add
+push 0
+add
+pusha 0
+push 5
+pusha BP
+push -2
+add
+loadi
+mul
+add
+push 0
+add
+loadb
+storeb
+#line 59
+pusha BP
+push -7
+add
+push 1
+add
+pusha 0
+push 5
+pusha BP
+push -2
+add
+loadi
+mul
+add
+push 1
 add
 loadf
-call letraHipoteca
+storef
+#line 61
+pusha BP
+push -7
+add
+push 0
+add
+loadb
+outb
+#line 62
+pusha BP
+push -7
+add
+push 1
+add
+loadf
 outf
-ret 0, 10, 0
+#line 64
+pusha BP
+push -2
+add
+pusha BP
+push -2
+add
+loadi
+pushi 1
+addi
+storei
+jmp while1
+finWhile1:
+pusha BP
+push -2
+add
+loadi
+ret 2,7,0
+#line 69
+main:
+enter 2
+#line 72
+call inicia
+#line 74
+pusha BP
+push -2
+add
+ini
+storei
+#line 75
+pusha BP
+push -2
+add
+loadi
+call busca
+#line 77
+call imprime
+pop
+ret 0, 2, 0
